@@ -1,0 +1,5 @@
+src/js2
+.sass-cache
+
+web/assets
+!web/assets/vendor
