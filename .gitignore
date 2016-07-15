@@ -1,5 +1,6 @@
-src/js2
 .sass-cache
 
 web/assets
 !web/assets/vendor
+typings
+!typings/index.d.ts
