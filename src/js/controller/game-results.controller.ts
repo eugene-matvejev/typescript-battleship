@@ -10,7 +10,7 @@ $(document).ready(function () {
         .on('click', 'li[data-section="game-results-area"]', function (e) {
             e.stopPropagation();
 
-            gameResults.pageMgr.switchSection(this);
+            gameResults.apiMgr.pageMgr.switchSection(this);
             gameResults.fetch(1);
         });
 

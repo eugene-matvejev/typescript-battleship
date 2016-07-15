@@ -1,6 +1,14 @@
 'use strict';
 
 class PageMgr {
+    protected modalMgr   : ModalMgr;
+    protected popupMgr   : PopupMgr;
+    protected $docTitle  : any;
+    protected $loading   : any;
+    protected $sidebar   : any;
+    protected $content   : any;
+    protected $pageTitle : any;
+
     constructor() {
         this.modalMgr   = new ModalMgr();
         this.popupMgr   = new PopupMgr();

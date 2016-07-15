@@ -1,10 +1,23 @@
 'use strict';
 
 class PaginationMgr {
+    private previousPage : number;
+    private currentPage : number;
+    private totalPages : number;
+    private nextPage : number;
+
+    public $html : any;
+
+    private $currentPage : any;
+    private $totalPages : any;
+
+    private $nextPageBtn : any;
+    private $previousPageBtn : any;
+
     constructor() {
         this.previousPage = this.currentPage = this.totalPages = this.nextPage = 1;
 
-        this.$html = $(this.constructor.resources.layout);
+        this.$html = $(PaginationMgr.resources.layout);
 
         this.$currentPage = this.$html.find('span#data-page-current');
         this.$totalPages  = this.$html.find('span#data-page-total');
@@ -77,24 +90,24 @@ class PaginationMgr {
 
         return this;
     }
-}
 
-PaginationMgr.resources = {
-    /** @type {string} */
-    layout: '\
-        <div class="pagination-area"> \
-            <div class="btn-group btn-group-xs" role="group" aria-label="statistics-pagination"> \
-                <button type="button" id="previous-page-btn" data-page="" class="btn btn-default"> \
-                    <span id="data-page-previous" class="glyphicon glyphicon-chevron-left"></span> \
-                </button> \
-                <button type="button" class="btn btn-default" disabled="disabled"> \
-                    <span id="data-page-current"></span> \
-                    <span> of </span> \
-                    <span id="data-page-total"></span> \
-                </button> \
-                <button type="button" id="next-page-btn" data-page="" class="btn btn-default"> \
-                    <span id="data-page-next" class="glyphicon glyphicon-chevron-right"></span> \
-                </button> \
-            </div> \
-        </div>'
-};
+    public static resources = {
+        /** @type {string} */
+        layout : '\
+            <div class="pagination-area"> \
+                <div class="btn-group btn-group-xs" role="group" aria-label="statistics-pagination"> \
+                    <button type="button" id="previous-page-btn" data-page="" class="btn btn-default"> \
+                        <span id="data-page-previous" class="glyphicon glyphicon-chevron-left"></span> \
+                    </button> \
+                    <button type="button" class="btn btn-default" disabled="disabled"> \
+                        <span id="data-page-current"></span> \
+                        <span> of </span> \
+                        <span id="data-page-total"></span> \
+                    </button> \
+                    <button type="button" id="next-page-btn" data-page="" class="btn btn-default"> \
+                        <span id="data-page-next" class="glyphicon glyphicon-chevron-right"></span> \
+                    </button> \
+                </div> \
+            </div>'
+    }
+}
