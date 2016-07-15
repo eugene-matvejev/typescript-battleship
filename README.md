@@ -58,7 +58,9 @@ _purpose: easier manual testing_
   * pull requests follows [semantic vesion](http://semver.org/)
 
 # how to install
- * WIP
+ * npm install
+ * typings install
+ * tsc
 
 ### how to execute tests
  * WIP
