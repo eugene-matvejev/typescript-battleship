@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title class="custom-block" id="title"></title>
+    <link rel="stylesheet" href="assets/vendor/twitter-bootstrap/css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/app.css" type="text/css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="page-loading hidden">
+            <div class="loading-animation">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="page-sidebar">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand page-header">
+                    Battleship Game
+                    <span class="toggle-btn glyphicon glyphicon-menu-hamburger"></span>
+                </li>
+                <li data-action="game-new-action">
+                    game: new
+                </li>
+                <li data-section="game-current-area">
+                    game: current
+                </li>
+                <li data-section="game-results-area">
+                    game: results
+                </li>
+                <li class="history-container no-hover">
+                    <span class="history-title">legend</span>
+                    <ul class="history-list">
+                        <li>untouched water <span class="history-element" data-flags="0"></span></li>
+                        <li>shot water <span class="history-element" data-flags="1"></span></li>
+                        <li>live ship <span class="history-element" data-flags="2"></span></li>
+                        <li>dead ship <span class="history-element" data-flags="3"></span></li>
+                        <li>cell to skip <span class="history-element" data-flags="5"></span></li>
+                    </ul>
+
+                    <a href="/api/documentation" class="ext-link history-title">api documentation</a>
+                </li>
+            </ul>
+        </div>
+        <div class="page-content">
+            <div class="page-header">
+                <span class="toggle-btn glyphicon glyphicon-menu-hamburger"></span>
+                <span class="page-section-title"></span>
+            </div>
+            <div class="container-fluid">
+                <div class="row col-lg-12">
+                    <div id="notification-area" class="hidden">
+                        <span class="notification-control glyphicon glyphicon-remove"></span>
+                        <div class="notification-content"></div>
+                    </div>
+<!--
+    foundation_bundle.api.player_create   POST     ANY      ANY    /api/player/register
+    foundation_bundle.api.player_login    POST     ANY      ANY    /api/player/login
+    foundation_bundle.api.player_logout   DELETE   ANY      ANY    /api/player/logout/{hash}
+    foundation_bundle.gui.index           GET      ANY      ANY    /
+    battleship_game.api.game.results      GET      ANY      ANY    /api/game-results/page/{page}
+    battleship_game.api.init              POST     ANY      ANY    /api/game-init
+    battleship_game.api.turn              PATCH    ANY      ANY    /api/game-turn/cell-id/{cellId}
+    nelmio_api_doc_index                  GET      ANY      ANY    /api/documentation/{view}
+-->
+                    <div id="game-current-area" data-turn-link="/api/game-turn/cell-id/" data-init-link="/api/game-init">
+                    </div>
+                    <div id="modal-area"></div>
+                    <div id="game-results-area" data-game-results-link="/api/game-results/page/"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/assets/vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/vendor/twitter-bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="/assets/js/service/api-request.service.js"></script>
+
+    <script type="text/javascript" src="/assets/js/prototype/battlefield.prototype.js"></script>
+    <script type="text/javascript" src="/assets/js/prototype/cell.prototype.js"></script>
+    <script type="text/javascript" src="/assets/js/prototype/game.prototype.js"></script>
+    <script type="text/javascript" src="/assets/js/prototype/game-results.prototype.js"></script>
+    <script type="text/javascript" src="/assets/js/prototype/player.prototype.js"></script>
+
+    <script type="text/javascript" src="/assets/js/manager/page.manager.js"></script>
+    <script type="text/javascript" src="/assets/js/manager/popup.manager.js"></script>
+    <script type="text/javascript" src="/assets/js/manager/modal.manager.js"></script>
+    <script type="text/javascript" src="/assets/js/manager/pagination.manager.js"></script>
+
+    <script type="text/javascript" src="/assets/js/controller/app.controller.js"></script>
+    <script type="text/javascript" src="/assets/js/controller/game.controller.js"></script>
+    <script type="text/javascript" src="/assets/js/controller/game-results.controller.js"></script>
+</body>
+</html>
