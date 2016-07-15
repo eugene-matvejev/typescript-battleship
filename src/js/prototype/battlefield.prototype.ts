@@ -1,6 +1,9 @@
 'use strict';
 
 class Battlefield {
+    public cells : Cell[];
+    public $html: any;
+
     /**
      * @param {jQuery} $el
      * @param {number} size
@@ -19,7 +22,7 @@ class Battlefield {
      */
     init(size) {
         let layout     = Cell.resources.layout,
-            $container = $(this.constructor.resources.cellRowLayout),
+            $container = $(Battlefield.resources.cellRowLayout),
             /** append < first , first > transparent cell to top decoration row */
             $top       = $container.clone().append(layout);
 
@@ -80,9 +83,10 @@ class Battlefield {
             this
         );
     }
+
+    public static resources = {
+        /** @type {string} */
+        cellRowLayout: '<div class="row battlefield-cell-container"></div>'
+    }
 }
 
-Battlefield.resources = {
-    /** @type {string} */
-    cellRowLayout: '<div class="row battlefield-cell-container"></div>'
-};

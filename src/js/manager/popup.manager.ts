@@ -1,6 +1,9 @@
 'use strict';
 
 class PopupMgr {
+    private $html : any;
+    private $content : any;
+
     constructor() {
         this.$html    = $('#notification-area');
         this.$content = this.$html.find('.notification-content');

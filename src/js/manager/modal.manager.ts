@@ -1,6 +1,8 @@
 'use strict';
 
 class ModalMgr {
+    public $html: any;
+    
     constructor() {
         this.$html = $('#modal-area');
     }

@@ -1,18 +1,25 @@
 'use strict';
-
 class Player {
+    public $html : any;
+
+    public battlefield : Battlefield;
+
+    public id : number;
+    public flags : number;
+    public name : string;
+
     /**
      * @param {string}  playerName
      * @param {number}  battlefieldSize
      * @param {boolean} [isCPUPlayer]
      */
-    constructor(playerName, battlefieldSize, isCPUPlayer) {
-        this.$html = $(this.constructor.resources.layout);
+    constructor(playerName : string, battlefieldSize : number, isCPUPlayer? : boolean) {
+        this.$html = $(Player.resources.layout);
         /** by default: type: human (0x00) */
         this.setName(playerName)
-            .setFlag(isCPUPlayer ? this.constructor.resources.flags.ai : 0x00);
+            .setFlag(isCPUPlayer ? Player.resources.flags.ai : 0x00);
 
-        this.battlefield = (new Battlefield(this.$html.find('.player-field'), battlefieldSize, this));
+        this.battlefield = new Battlefield(this.$html.find('.player-field'), battlefieldSize);
         if (!this.isAIControlled()) {
             this.battlefield.initPlayerCells();
         }
@@ -58,21 +65,21 @@ class Player {
      * @returns {boolean}
      */
     isAIControlled() {
-        let flag = this.constructor.resources.flags.ai;
+        let flag = Player.resources.flags.ai;
 
         return (this.flags & flag) === flag;
     }
-}
 
-Player.resources = {
-    /** @enum {number} */
-    flags: {
-        ai: 0x01
-    },
-    /** @type {string} */
-    layout: ' \
+    public static resources = {
+        /** @enum {number} */
+        flags : {
+            ai : 0x01
+        },
+        /** @type {string} */
+        layout : ' \
         <div class="col-md-6 player-area" data-player-id="unk" data-player-type="unk"> \
             <div class="player-name">undefined</div> \
             <div class="player-field"></div> \
         </div>'
-};
+    }
+}

@@ -22,7 +22,7 @@ $(document).ready(function () {
     // /** open modal for new game when page is loaded */
     // game.modalMgr.updateHTML(game.constructor.resources.html.modal).show();
     /** initiate game when page is loaded */
-    game.pageMgr.switchSection(document.querySelector('.page-sidebar li[data-section="game-current-area"]'));
+    game.apiMgr.pageMgr.switchSection(document.querySelector('.page-sidebar li[data-section="game-current-area"]'));
     game.init('Human', 7);
 
     $('#game-current-area')
@@ -36,7 +36,7 @@ $(document).ready(function () {
             e.stopPropagation();
 
             game.popupMgr.hide();
-            game.modalMgr.updateHTML(game.constructor.resources.html.modal).show();
+            game.modalMgr.updateHTML(Game.resources.html.modal).show();
         });
     $('#modal-area')
         .on('input', '#model-input-player-name', function (e) {
@@ -69,10 +69,10 @@ $(document).ready(function () {
             /** modal area: submit */
             e.stopPropagation();
 
-            game.pageMgr.switchSection(document.querySelector('.page-sidebar li[data-section="game-current-area"]'));
+            game.apiMgr.pageMgr.switchSection(document.querySelector('.page-sidebar li[data-section="game-current-area"]'));
             game.init(
-                document.getElementById('model-input-player-name').value,
-                document.getElementById('model-input-battlefield-size').value
+                document.getElementById('model-input-player-name').getAttribute('value'),
+                document.getElementById('model-input-battlefield-size').getAttribute('value')
             );
         });
 });
