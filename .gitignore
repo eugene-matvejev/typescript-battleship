@@ -6,5 +6,4 @@ web/assets
 var/logs
 !var/logs/.gitkeep
 typings
-!typings/index.d.ts
 !web/assets/vendor
