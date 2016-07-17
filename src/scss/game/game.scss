@@ -30,13 +30,6 @@ $FLAG_SHIP_DEAD_FLAG: 3;
 $FLAG_SKIP_COLOR: #556980;
 $FLAG_SKIP_FLAG: 5;
 
-$arr = [ $FLAG_NONE_FLAG => $FLAG_NONE_COLOR];
-for($el, $index in $arr) {
-    &[data-flags="#{$index}"] {
-        background: $el;
-    }
-}
-
 .history-element,
 .battlefield-cell {
     &[data-flags="#{$FLAG_NONE_FLAG}"] {
