@@ -2,16 +2,32 @@
     "name": "battleship-game-gui",
     "version": "1.0.0",
     "description": "GUI for battleship-game-api",
+    "repository": {
+        "main": "https://github.com/eugene-matvejev/battleship-game-gui"
+    },
     "main": "index.js",
+    "license": "MIT",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
+        "lite": "lite-server",
+        "postinstall": "typings install",
+        "tsc": "tsc",
+        "tsc:w": "tsc -w",
+        "typings": "typings",
+        "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+        "build-css": "node-sass --include-path scss src/scss/app.scss web/assets/css/app.css"
     },
     "author": "eugene.matvejev@gmail.com",
-    "license": "MIT",
     "dependencies": {
         "jquery": "^3.1",
         "bootstrap": "^3.3"
     },
     "devDependencies": {
+        "concurrently": "^2.0.0",
+        "lite-server": "^2.2.0",
+        "node-sass": "^3.8.0",
+        "nodemon": "^1.9.2",
+        "typescript": "^1.8.10",
+        "typings": "^1.0.4"
     }
 }
