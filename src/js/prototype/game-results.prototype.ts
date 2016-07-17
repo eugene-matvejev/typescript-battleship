@@ -1,5 +1,3 @@
-'use strict';
-
 class GameResults {
     public apiMgr : APIRequestService;
     protected route : string;

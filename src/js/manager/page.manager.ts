@@ -1,5 +1,3 @@
-'use strict';
-
 class PageMgr {
     protected modalMgr   : ModalMgr;
     protected popupMgr   : PopupMgr;

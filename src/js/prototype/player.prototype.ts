@@ -1,4 +1,3 @@
-'use strict';
 class Player {
     public $html : any;
 

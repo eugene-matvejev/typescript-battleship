@@ -1,5 +1,3 @@
-'use strict';
-
 class PaginationMgr {
     private previousPage : number;
     private currentPage : number;

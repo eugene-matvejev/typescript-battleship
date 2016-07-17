@@ -1,5 +1,3 @@
-'use strict';
-
 class Battlefield {
     public cells : Cell[];
     public $html: any;

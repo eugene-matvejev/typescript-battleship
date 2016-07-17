@@ -1,5 +1,3 @@
-'use strict';
-
 class Game {
     public $html : any;
 

@@ -1,5 +1,3 @@
-'use strict';
-
 class APIRequestService {
     public pageMgr : PageMgr;
 

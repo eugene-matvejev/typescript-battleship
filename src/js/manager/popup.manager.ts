@@ -1,5 +1,3 @@
-'use strict';
-
 class PopupMgr {
     private $html : any;
     private $content : any;
