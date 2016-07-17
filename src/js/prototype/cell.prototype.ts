@@ -1,5 +1,3 @@
-'use strict';
-
 class Cell {
     public $html : any;
 

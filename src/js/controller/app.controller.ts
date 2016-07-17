@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * this controller serve common "Application" actions such as sidebar toggling
  */

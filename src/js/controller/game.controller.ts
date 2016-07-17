@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * this controller serve all "Game" related actions such as game initiation
  */
