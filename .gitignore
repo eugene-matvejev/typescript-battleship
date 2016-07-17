@@ -1,6 +1,10 @@
 .sass-cache
+
 node_modules
+
 web/assets
-!web/assets/vendor
+var/logs
+!var/logs/.gitkeep
 typings
 !typings/index.d.ts
+!web/assets/vendor
