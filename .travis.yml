@@ -11,3 +11,7 @@ os:
 
 before_script:
     - "npm install"
+
+script:
+    - "npm run tsc"
+    - "npm run build-css"
