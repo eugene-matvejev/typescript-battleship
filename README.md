@@ -10,7 +10,6 @@ __BDD tests__
 __Test Coverage__
  * WIP
 
-__DEMO__ : https://battleship-game-api.herokuapp.com/ [API]
 __DEMO__ : https://battleship-game-gui.herokuapp.com/ [GUI]
 
 # Battleship Game GUI
