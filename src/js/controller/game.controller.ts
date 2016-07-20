@@ -34,7 +34,9 @@ $(document).ready(function () {
             e.stopPropagation();
 
             game.popupMgr.hide();
-            game.modalMgr.updateHTML(Game.resources.html.modal).show();
+            game.modalMgr
+                .updateHTML(Game.resources.html.modal())
+                .show();
         });
     $('#modal-area')
         .on('input', '#model-input-player-name', function (e) {
