@@ -20,7 +20,7 @@ $(document).ready(function () {
     // /** open modal for new game when page is loaded */
     // game.modalMgr.updateHTML(game.constructor.resources.html.modal).show();
     /** initiate game when page is loaded */
-    game.apiMgr.pageMgr.switchSection(document.querySelector('.page-sidebar li[data-section="game-current-area"]'));
+    game.apiMgr.pageMgr.switchSection(<HTMLElement>document.querySelector('.page-sidebar li[data-section="game-current-area"]'));
     game.init('Human', 7);
 
     $('#game-current-area')
@@ -69,10 +69,10 @@ $(document).ready(function () {
             /** modal area: submit */
             e.stopPropagation();
 
-            game.apiMgr.pageMgr.switchSection(document.querySelector('.page-sidebar li[data-section="game-current-area"]'));
+            game.apiMgr.pageMgr.switchSection(<HTMLElement>document.querySelector('.page-sidebar li[data-section="game-current-area"]'));
             game.init(
                 document.getElementById('model-input-player-name').getAttribute('value'),
-                document.getElementById('model-input-battlefield-size').getAttribute('value')
+                parseInt(document.getElementById('model-input-battlefield-size').getAttribute('value'))
             );
         });
 });
