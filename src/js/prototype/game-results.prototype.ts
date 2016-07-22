@@ -1,14 +1,11 @@
 class GameResults {
-    public apiMgr : APIRequestService;
-    protected route : string;
-    protected pagination : PaginationMgr;
+    public apiMgr: APIRequestService;
+    protected route: string;
+    protected pagination: PaginationMgr;
 
-    public $tableArea : any;
+    public $tableArea: any;
 
-    /**
-     * @param {!jQuery} $el
-     */
-    constructor($el) {
+    constructor($el: JQuery) {
         this.pagination = new PaginationMgr();
         this.apiMgr     = new APIRequestService();
         this.route      = $el.attr('data-game-results-link');
@@ -17,10 +14,7 @@ class GameResults {
         $el.append(this.$tableArea, this.pagination.$html);
     }
 
-    /**
-     * @param {(number|string)} page
-     */
-    fetch(page) {
+    fetch(page: number|string): void {
         let self      = this,
             onSuccess = function (response) {
                 self.update(response);
@@ -32,7 +26,7 @@ class GameResults {
     /**
      * @param {{meta: {currentPage: {number}, totalPages: {number}}, results: []}} response
      */
-    update(response) {
+    update(response: any): void {
         let html   = GameResults.resources.html,
             $table = $(html.table()),
             $tBody = $table.find('tbody');
@@ -44,40 +38,35 @@ class GameResults {
     }
 
     public static resources = {
-        /** @enum {string} */
-        tableHeader : {
-            resultId : '#',
-            playerName : 'winner',
-            finishTime : 'finished at'
+        tableHeader: {
+            resultId: '#',
+            playerName: 'winner',
+            finishTime: 'finished at'
         },
-        /** @type {string} */
-        layout : '<div class="results-area"></div>',
-        html : {
-            /**
-             * @returns {string}
-             */
-            table : function () {
+        layout: '<div class="results-area"></div>',
+        html: {
+            table: function (): string {
                 let text = GameResults.resources.tableHeader;
 
-                return `<table class="table"> \
-                            <tr> \
-                                <th>${text.resultId}</th> \
-                                <th>${text.playerName}</th> \
-                                <th>${text.finishTime}</th> \
-                            </tr> \
-                        </table>`;
+                return ` \
+                    <table class="table"> \
+                        <tr> \
+                            <th>${text.resultId}</th> \
+                            <th>${text.playerName}</th> \
+                            <th>${text.finishTime}</th> \
+                        </tr> \
+                    </table>`;
             },
             /**
              * @param {{id: {number}, player: {id: {number}}, timestamp: {string}}} obj
-             *
-             * @returns {string}
              */
-            row : function (obj) {
-                return `<tr> \
-                            <td>${obj.id}</td> \
-                            <td>${(new Date(obj.timestamp)).toLocaleString()}</td> \
-                            <td>${obj.player.name}</td> \
-                        </tr>`;
+            row: function (obj: any): string {
+                return ` \
+                    <tr> \
+                        <td>${obj.id}</td> \
+                        <td>${(new Date(obj.timestamp)).toLocaleString()}</td> \
+                        <td>${obj.player.name}</td> \
+                    </tr>`;
             }
         }
     }
