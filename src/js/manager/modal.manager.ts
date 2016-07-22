@@ -1,23 +1,17 @@
 class ModalMgr {
     public $html: any;
-    
+
     constructor() {
         this.$html = $('#modal-area');
     }
 
-    /**
-     * @returns {ModalMgr}
-     */
-    show() {
-        this.$html.removeClass('hidden').find('.modal').modal({ keyboard: false });
+    show(): ModalMgr {
+        this.$html.removeClass('hidden').find('.modal').modal({keyboard: false});
 
         return this;
     }
 
-    /**
-     * @returns {ModalMgr}
-     */
-    hide() {
+    hide(): ModalMgr {
         this.$html.find('.modal').modal('hide');
         $('body').removeClass('modal-open');
         $('.modal-backdrop').remove();
@@ -25,23 +19,13 @@ class ModalMgr {
         return this;
     }
 
-    /**
-     * @param {string} html
-     *
-     * @returns {ModalMgr}
-     */
-    updateHTML(html) {
+    updateHTML(html: string): ModalMgr {
         this.$html.html(html);
 
         return this;
     }
 
-    /**
-     * @param {boolean} [enable]
-     *
-     * @returns {ModalMgr}
-     */
-    unlockSubmission(enable) {
+    unlockSubmission(enable?: boolean): ModalMgr {
         let $button = this.$html.find('button.btn[type="button"]');
 
         $button[0].disabled = !(undefined === enable || enable);
