@@ -1,24 +1,15 @@
 class Battlefield {
-    public cells : Cell[];
+    public cells: Cell[];
     public $html: any;
 
-    /**
-     * @param {jQuery} $el
-     * @param {number} size
-     */
-    constructor($el, size) {
+    constructor($el: JQueryStatic, size: number) {
         this.$html = $el;
         this.cells = [];
 
         this.init(size);
     }
 
-    /**
-     * @param {number} size
-     *
-     * @returns {Battlefield}
-     */
-    init(size) {
+    init(size: number): Battlefield {
         let layout     = Cell.resources.layout,
             $container = $(Battlefield.resources.cellRowLayout),
             /** append < first , first > transparent cell to top decoration row */
@@ -51,12 +42,8 @@ class Battlefield {
         return this;
     }
 
-    /**
-     * @param {Cell} cell
-     *
-     * @returns {Battlefield}
-     */
-    addCell(cell) {
+
+    addCell(cell: Cell): Battlefield {
         this.cells.push(cell);
 
         return this;
@@ -64,20 +51,23 @@ class Battlefield {
 
     /**
      * @param {{id: {number}, coordinate: {string}}} criteria
-     *
-     * @returns {?Cell}
      */
-    findCellByCriteria(criteria) {
-        return this.cells.find(cell =>
+    findCellByCriteria(criteria: any): Cell {
+        let cell = this.cells.find(cell =>
             (undefined !== criteria.id && cell.id === criteria.id) ||
             (undefined !== criteria.coordinate && cell.coordinate === criteria.coordinate)
         );
+        if (undefined !== cell) {
+            return cell;
+        }
+
+        throw `cell by criteria ${JSON.stringify(criteria)} not found`;
     }
 
     /** *** *** *** *** *** *** *** DATA MOCK *** *** *** *** *** *** **/
-    initPlayerCells() {
+    initPlayerCells(): void {
         ['A1', 'A2', 'A3', 'C3', 'C4', 'C5', 'C1', 'D1', 'E1', 'F1', 'G5', 'G6', 'F3'].forEach(
-            coordinate => this.findCellByCriteria({ coordinate: coordinate }).setFlags(Cell.resources.flags.ship),
+            coordinate => this.findCellByCriteria({coordinate: coordinate}).setFlags(Cell.resources.flags.ship),
             this
         );
     }
