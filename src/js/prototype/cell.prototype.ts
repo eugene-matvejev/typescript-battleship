@@ -1,117 +1,63 @@
 class Cell {
-    public $html : any;
+    public $html: any;
 
-    public coordinate : string;
-    public id : number;
+    public coordinate: string;
+    public id: number;
 
-    protected flags : number;
+    protected flags: number;
 
-    /**
-     * @param {number} x
-     * @param {number} y
-     */
-    constructor(x, y) {
+    constructor(x: number, y: number) {
         this.$html = $(Cell.resources.layout);
         this.setCoordinate(Cell.resources.coordinate.factory(x, y));
     }
 
-    /**
-     * @param {string} coordinate
-     *
-     * @returns {Cell}
-     */
-    setCoordinate(coordinate) {
+    setCoordinate(coordinate: string): Cell {
         this.coordinate = coordinate;
         this.$html.attr('data-coordinate', coordinate);
 
         return this;
     }
 
-    /**
-     * @param {number} id
-     *
-     * @returns {Cell}
-     */
-    setId(id) {
+    setId(id: number): Cell {
         this.id = id;
         this.$html.attr('data-id', id);
 
         return this;
     }
 
-    /**
-     * @param {number} flags
-     *
-     * @returns {Cell}
-     */
-    setFlags(flags) {
+    setFlags(flags: number): Cell {
         this.flags = flags;
         this.$html.attr('data-flags', flags);
 
         return this;
     }
 
-    /**
-     * @param {number} flag
-     *
-     * @returns {boolean}
-     */
-    hasFlag(flag) {
+    hasFlag(flag: number): boolean {
         return (this.flags & flag) === flag;
     }
 
-    /**
-     * @param {string} mode
-     *
-     * @returns {Cell}
-     */
-    actAsAxisLabel(mode) {
+    actAsAxisLabel(mode: string): Cell {
         this.$html.text(Cell.resources.coordinate.format[mode](this));
 
         return this;
     }
 
-    /**
-     * @returns {{id: {number}, coordinate: {string}, flags: {number}}}
-     */
-    getSerializationView() {
-        return {id : this.id, coordinate : this.coordinate, flags : this.flags};
-    }
-
     public static resources = {
-        /** @enum {number} */
-        flags : {
-            none : 0x00,
-            dead : 0x01,
-            ship : 0x02
+        flags: {
+            none: 0x00,
+            dead: 0x01,
+            ship: 0x02
         },
-        /** @type {string} */
-        layout : '<div class="col-md-1 battlefield-cell"></div>',
-        coordinate : {
-            /**
-             * @param {number} x
-             * @param {number} y
-             *
-             * @returns {string}
-             */
-            factory : function (x, y) {
+        layout: '<div class="col-md-1 battlefield-cell"></div>',
+        coordinate: {
+            factory: function (x: number, y: number) : string {
                 return String.fromCharCode(97 + x).toUpperCase() + (1 + y);
             },
-            format : {
-                /**
-                 * @param {Cell} cell
-                 *
-                 * @returns {string}
-                 */
-                letter : function (cell) {
+            format: {
+                letter: function (cell: Cell) : string {
                     return cell.coordinate.charAt(0);
                 },
-                /**
-                 * @param {Cell} cell
-                 *
-                 * @returns {string}
-                 */
-                digit : function (cell) {
+                digit: function (cell: Cell) : string {
                     return cell.coordinate.substring(1);
                 }
             }
