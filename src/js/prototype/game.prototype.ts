@@ -1,15 +1,12 @@
 class Game {
-    public $html : any;
+    public $html: JQuery;
 
-    public popupMgr : PopupMgr;
-    public modalMgr : ModalMgr;
-    public players : Player[];
-    public apiMgr : APIRequestService;
+    public popupMgr: PopupMgr;
+    public modalMgr: ModalMgr;
+    public players: Player[];
+    public apiMgr: APIRequestService;
 
-    /**
-     * @param {jQuery} $el
-     */
-    constructor($el) {
+    constructor($el: JQuery) {
         this.$html = $el;
 
         this.popupMgr = new PopupMgr();
@@ -17,11 +14,7 @@ class Game {
         this.apiMgr   = new APIRequestService();
     }
 
-    /**
-     * @param {string} playerName
-     * @param {number} battlefieldSize
-     */
-    init(playerName, battlefieldSize) {
+    init(playerName: string, battlefieldSize: number) {
         this.players = [];
         this.$html.html('');
 
@@ -38,10 +31,10 @@ class Game {
         this.players.push(player);
 
         let requestData = {
-            playerName : playerName,
-            opponents : 1, //TODO: multi-player feature
-            size : battlefieldSize,
-            coordinates : player.battlefield.cells
+            playerName: playerName,
+            opponents: 1, //TODO: multi-player feature
+            size: battlefieldSize,
+            coordinates: player.battlefield.cells
                 .filter(cell => cell.hasFlag(Cell.resources.flags.ship))
                 .map(cell => cell.coordinate)
         };
@@ -56,7 +49,7 @@ class Game {
      *      cells: {id: {number}, coordinate: {string}, flags: {number}}[]
      *  }[]} response
      */
-    parseInitResponse(response) {
+    parseInitResponse(response: any): void {
         response.forEach(function (battlefield) {
             let player;
 
@@ -74,32 +67,19 @@ class Game {
 
             Object.keys(battlefield.cells).forEach(function (index) {
                 let _cell = battlefield.cells[index],
-                    cell  = this.findPlayerCellByCriteria({playerId : player.id, coordinate : _cell.coordinate});
+                    cell  = this.findPlayerCellByCriteria({playerId: player.id, coordinate: _cell.coordinate});
 
                 cell.setId(_cell.id).setFlags(_cell.flags);
             }, this);
         }, this);
     }
 
-    /**
-     * @param {number} cellId
-     */
-    update(cellId) {
-        this.cellSend(this.findPlayerCellByCriteria({id : cellId}));
+    update(cellId: number): void {
+        this.cellSend(this.findPlayerCellByCriteria({id: cellId}));
     }
 
-    /**
-     * @param id {number}
-     *
-     * @returns {!Player}
-     */
-    findPlayerById(id) {
-        for(let a = 0; a < this.players.length; a++ ) {
-            if(this.players[a].id === id) {
-                var player = this.players[a];
-            }
-        }
-        // let player = this.players.find(player => player.id === id);
+    findPlayerById(id: number): Player {
+        let player = this.players.find(player => player.id === id);
         if (undefined !== player) {
             return player;
         }
@@ -107,12 +87,7 @@ class Game {
         throw `player with id: ${id} not found`;
     }
 
-    /**
-     * @param {string} name
-     *
-     * @returns {!Player}
-     */
-    findPlayerByName(name) {
+    findPlayerByName(name: string): Player {
         let player = this.players.find(player => player.name === name);
         if (undefined !== player) {
             return player;
@@ -121,10 +96,7 @@ class Game {
         throw `player with name: "${name}" not found`;
     }
 
-    /**
-     * @param {Cell} cell
-     */
-    cellSend(cell) {
+    cellSend(cell: Cell): void {
         var self      = this,
             onSuccess = function (response) {
                 self.parseUpdateResponse(response);
@@ -136,8 +108,8 @@ class Game {
     /**
      * @param {{cells: {id: {number}, flags: {number}}[], result: {player: {Object}}}} response
      */
-    parseUpdateResponse(response) {
-        response.cells.forEach(cell => this.findPlayerCellByCriteria({id : parseInt(cell.id)}).setFlags(cell.flags), this);
+    parseUpdateResponse(response: any) {
+        response.cells.forEach(cell => this.findPlayerCellByCriteria({id: parseInt(cell.id)}).setFlags(cell.flags), this);
 
         /** detect victory */
         if (undefined !== response.result) {
@@ -151,10 +123,8 @@ class Game {
 
     /**
      * @param {{playerId: {number}, id: {number}, coordinate: {string}}} criteria
-     *
-     * @returns {?Cell}
      */
-    findPlayerCellByCriteria(criteria) {
+    findPlayerCellByCriteria(criteria: any): Cell {
         for (let player of this.players) {
             if (undefined !== criteria.playerId && criteria.playerId !== player.id) {
                 continue;
@@ -170,49 +140,33 @@ class Game {
     }
 
     public static resources = {
-        config : {
-            /** @enum {string} */
-            text : {
-                win : 'you won',
-                loss : 'you lost'
+        config: {
+            text: {
+                win: 'you won',
+                loss: 'you lost'
             },
-            pattern : {
-                /** @enum {number} */
-                battlefield : {
-                    min : 7,
-                    max : 12
+            pattern: {
+                battlefield: {
+                    min: 7,
+                    max: 12
                 },
-                /** @type {Object} */
-                username : /^[a-zA-Z0-9\.\- @]{3,25}$/
+                username: /^[a-zA-Z0-9\.\- @]{3,25}$/
             }
         },
-        validate : {
-            battlefield : {
-                /**
-                 * @type {number}
-                 *
-                 * @returns {boolean}
-                 */
-                size : function (value) {
+        validate: {
+            battlefield: {
+                size: function (value: number): boolean {
                     let battlefield = Game.resources.config.pattern.battlefield;
 
                     return !isNaN(value) && value >= battlefield.min && value <= battlefield.max;
                 }
             },
-            /**
-             * @type {string}
-             *
-             * @returns {boolean}
-             */
-            username : function (value) {
+            username: function (value: string): boolean {
                 return Game.resources.config.pattern.username.test(value);
             }
         },
-        html : {
-            /**
-             * @returns {string}
-             */
-            modal : function () {
+        html: {
+            modal: function (): string {
                 let pattern = Game.resources.config.pattern;
 
                 return ` \
