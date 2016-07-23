@@ -9,7 +9,6 @@ class APIRequestService extends Configuration {
     request(requestMethod: string, requestURL: string, requestData?: Object, onSuccess?: Function, onError?: Function) {
         let self = this;
         requestData = JSON.stringify(requestData);
-        // requestURL = this.buildRequestURL(requestURL)+ '?XDEBUG_START_SESSION';
         requestURL = APIRequestService.buildRequestURL(requestURL);
 
         $.ajax(<any>{
