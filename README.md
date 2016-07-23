@@ -76,8 +76,8 @@ _purpose: easier manual testing_
     DocumentRoot "%PROJECT_ROOT_DIRECTORY%/web"
     ErrorLog "%PROJECT_ROOT_DIRECTORY%/var/logs/apache_log"
 
-    ServerName web.game.local
-    ServerAlias web.game.local
+    ServerName gui.game.local
+    ServerAlias gui.game.local
     <Directory "%PROJECT_ROOT_DIRECTORY%/web">
         AllowOverride All
         Order Allow,Deny
