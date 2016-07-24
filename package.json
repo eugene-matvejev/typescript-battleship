@@ -1,6 +1,6 @@
 {
     "name": "battleship-game-gui",
-    "version": "1.0.0",
+    "version": "RC",
     "description": "GUI for battleship-game-api",
     "repository": {
         "main": "https://github.com/eugene-matvejev/battleship-game-gui"
