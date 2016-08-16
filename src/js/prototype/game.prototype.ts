@@ -126,13 +126,17 @@ class Game {
      */
     findPlayerCellByCriteria(criteria: any): Cell {
         for (let player of this.players) {
-            if (undefined !== criteria.playerId && criteria.playerId !== player.id) {
-                continue;
-            }
+            try {
+                if (undefined !== criteria.playerId && criteria.playerId !== player.id) {
+                    continue;
+                }
 
-            let cell = player.battlefield.findCellByCriteria(criteria);
-            if (undefined !== cell) {
-                return cell;
+                let cell = player.battlefield.findCellByCriteria(criteria);
+                if (undefined !== cell) {
+                    return cell;
+                }
+            } catch (exception) {
+                console.log(exception);
             }
         }
 
