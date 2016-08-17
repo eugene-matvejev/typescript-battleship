@@ -11,25 +11,31 @@ class APIRequestService extends Configuration {
         requestData = JSON.stringify(requestData);
         requestURL = APIRequestService.buildRequestURL(requestURL);
 
-        $.ajax(<any>{
-            accepts: 'application/json',
-            dataType: 'json',
-            crossDomain: true,
-            method: requestMethod,
-            url: requestURL,
-            data: requestData,
-            timeout: APIRequestService.requestTimeout,
-            beforeSend: function () {
-                self.pageMgr.loadingMode(true);
-                console.log(` >>> ${requestMethod} :: ${requestURL}`, requestData || '');
-            },
-            complete: function (jqXHR) {
-                self.pageMgr.loadingMode(false);
-                console.log(` >>> ${requestMethod} :: ${requestURL}`, jqXHR);
-            },
-            success: onSuccess,
-            error: onError
-        });
+        var xhr = new XMLHttpRequest();
+        xhr.open(requestMethod, requestURL);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = onSuccess;
+        xhr.send(requestData);
+
+        // $.ajax(<any>{
+        //     accepts: 'application/json',
+        //     dataType: 'json',
+        //     crossDomain: true,
+        //     method: requestMethod,
+        //     url: requestURL,
+        //     data: requestData,
+        //     timeout: APIRequestService.requestTimeout,
+        //     beforeSend: function () {
+        //         self.pageMgr.loadingMode(true);
+        //         console.log(` >>> ${requestMethod} :: ${requestURL}`, requestData || '');
+        //     },
+        //     complete: function (jqXHR) {
+        //         self.pageMgr.loadingMode(false);
+        //         console.log(` >>> ${requestMethod} :: ${requestURL}`, jqXHR);
+        //     },
+        //     success: onSuccess,
+        //     error: onError
+        // });
     }
 
     protected static buildRequestURL(requestPath: string) {
