@@ -11,22 +11,6 @@ class APIRequestService extends Configuration {
         requestData = JSON.stringify(requestData);
         requestURL = APIRequestService.buildRequestURL(requestURL);
 
-        // var xhr = new XMLHttpRequest();
-        // xhr.open('PUT', 'myservice/user/1234');
-        // xhr.setRequestHeader('Content-Type', 'application/json');
-        // xhr.onload = function() {
-        //     if (xhr.status === 200) {
-        //         var userInfo = JSON.parse(xhr.responseText);
-        //     }
-        // };
-        // xhr.send(requestData).
-        // success(onSuccess)
-
-        // this.requestAPI(requestMethod, requestURL, requestData)
-        //     .then(onSuccess);
-
-
-        // $.support.cors = true;
         $.ajax(<any>{
             accepts: 'application/json',
             dataType: 'json',
@@ -53,20 +37,5 @@ class APIRequestService extends Configuration {
 
         return `${APIRequestService.requestProtocol}://${APIRequestService.requestHost}/${requestPath}`
     }
-
-    // protected requestAPI(method: string, url: string, data: string) {
-    //     // return new Promise(
-    //     return new Promise<XMLHttpRequest>(
-    //         function(resolve, reject) {
-    //             // var xhr = typeof XDomainRequest !== undefined ? new XDomainRequest() : new XMLHttpRequest();
-    //             var xhr = new XMLHttpRequest();
-    //
-    //             xhr.open(method, url, true);
-    //             xhr.onload = resolve;
-    //             xhr.onerror = reject;
-    //             xhr.send(data);
-    //         }
-    //     );
-    // }
 }
 
