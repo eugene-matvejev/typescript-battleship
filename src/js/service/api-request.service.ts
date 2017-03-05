@@ -33,6 +33,8 @@ class APIRequestService extends Configuration {
     }
 
     protected static buildRequestURL(requestPath: string) {
+        requestPath = requestPath.replace(/^\/|\/$/g, '');
+
         return `${APIRequestService.requestProtocol}://${APIRequestService.requestHost}/${requestPath}`
     }
 }
