@@ -1,33 +1,34 @@
 {
-    "name": "battleship-game-gui",
-    "version": "1.1.0",
-    "description": "GUI for battleship-game-api",
-    "repository": {
-        "main": "https://github.com/eugene-matvejev/battleship-game-gui"
-    },
-    "main": "index.js",
-    "license": "MIT",
-    "scripts": {
-        "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
-        "lite": "lite-server",
-        "postinstall": "typings install",
-        "tsc": "tsc",
-        "tsc:w": "tsc -w",
-        "typings": "typings",
-        "watch-css": "nodemon -e scss -x \"npm run build-css\"",
-        "build-css": "node-sass --include-path scss src/scss/app.scss web/assets/css/app.css"
-    },
-    "author": "eugene.matvejev@gmail.com",
-    "dependencies": {
-        "jquery": "^3.1",
-        "bootstrap": "^3.3"
-    },
-    "devDependencies": {
-        "concurrently": "^2.0.0",
-        "lite-server": "^2.2.0",
-        "node-sass": "^3.8.0",
-        "nodemon": "^1.9.2",
-        "typescript": "^1.8.10",
-        "typings": "^1.0.4"
-    }
+  "name": "battleship-game-gui",
+  "version": "1.1.0",
+  "description": "GUI for battleship-game-api",
+  "repository": {
+    "main": "https://github.com/eugene-matvejev/battleship-game-gui"
+  },
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "lite": "lite-server",
+    "preinstall": "npm i typings -g",
+    "postinstall": "typings install",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "typings": "typings",
+    "generate-css": "node node_modules/lessc-each src/less src/stylesheets --verbose",
+    "generate-css:w": "node node_modules/less-watch-compile -w src/less -o src/stylesheets --verbose"
+  },
+  "author": "eugene.matvejev@gmail.com",
+  "dependencies": {
+    "bootstrap": "^3.3",
+    "jquery": "^3.1",
+    "concurrently": "^2.0.0",
+    "typescript": "^1.8.10",
+    "typings": "^1.0.4",
+    "lite-server": "^2.2.0",
+    "lessc-each": "^1.1.0"
+  },
+  "devDependencies": {
+    "less-watch-compile": "^1.1.8"
+  }
 }
