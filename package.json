@@ -8,9 +8,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
-    "lite": "lite-server",
-    "preinstall": "npm i typings -g",
+    "start": "tsc && npm run start-server",
+    "start-server": "lite-server",
+    "preinstall": "npm i typings lite-server -g",
     "postinstall": "typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
@@ -21,12 +21,12 @@
   "author": "eugene.matvejev@gmail.com",
   "dependencies": {
     "bootstrap": "^3.3",
-    "jquery": "^3.1",
     "concurrently": "^2.0.0",
+    "jquery": "^3.1",
+    "lessc-each": "^1.1.0",
+    "lite-server": "^2.3.0",
     "typescript": "^1.8.10",
-    "typings": "^1.0.4",
-    "lite-server": "^2.2.0",
-    "lessc-each": "^1.1.0"
+    "typings": "^1.5.0"
   },
   "devDependencies": {
     "less-watch-compile": "^1.1.8"
