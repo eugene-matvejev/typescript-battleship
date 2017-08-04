@@ -4,7 +4,7 @@
  * @type {{port: *, files: string[], server: {baseDir: string}}}
  */
 module.exports = {
-    port: process.env.PORT,
+    port: process.env.PORT || 9999,
     files: ['./**/*.{html,htm,css,js}'],
     server: {
         baseDir: "./web"
