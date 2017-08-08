@@ -10,17 +10,16 @@
 [codecov.io-heroku-link]: https://codecov.io/gh/eugene-matvejev/battleship-game-gui-vanilla-typescript/branch/heroku
 
 
-|                        | master                                                         | heroku                                                    
-|---                     |---                                                             |---
-| __TDD tests__          |
-| _< Circle CI >_ TSC    | [![build][circle.ci-master-badge]][circle.ci-master-link]      | [![build][circle.ci-heroku-badge]][circle.ci-heroku-link]
-| _< Circle CI >_ LESSC  | [![build][circle.ci-master-badge]][circle.ci-master-link]      | [![build][circle.ci-heroku-badge]][circle.ci-heroku-link]
-| __coverage__           |
-| _< codecov.io >_       | [![coverage][codecov.io-master-badge]][codecov.io-master-link] | [![coverage][codecov.io-heroku-badge]][codecov.io-heroku-link]
+|                       | master                                                         | heroku                                                    
+|---                    |---                                                             |---
+| __compilation__       |
+| _< Circle CI >_ TSC   | [![build][circle.ci-master-badge]][circle.ci-master-link]      | [![build][circle.ci-heroku-badge]][circle.ci-heroku-link]
+| _< Circle CI >_ LESSC | [![build][circle.ci-master-badge]][circle.ci-master-link]      | [![build][circle.ci-heroku-badge]][circle.ci-heroku-link]
+| __coverage__          |
+| _< codecov.io >_      | [![coverage][codecov.io-master-badge]][codecov.io-master-link] | [![coverage][codecov.io-heroku-badge]][codecov.io-heroku-link]
 
 other CI engines reports _[on master]_
 
-[![code-climate-code-quality](https://codeclimate.com/github/eugene-matvejev/battleship-game-api/badges/gpa.svg)](https://codeclimate.com/github/eugene-matvejev/battleship-game-api)
 [![travis-build-status-master](https://travis-ci.org/eugene-matvejev/battleship-game-gui-vanilla-typescript.svg?branch=master)](https://travis-ci.org/eugene-matvejev/battleship-game-gui-vanilla-typescript)
 [![codeship-build-status-master](https://app.codeship.com/projects/ed12aa00-33e7-0134-0af7-7e8c04437b1f/status?branch=master)](https://app.codeship.com/projects/164872)
 
