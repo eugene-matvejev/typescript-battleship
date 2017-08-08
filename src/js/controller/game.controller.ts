@@ -43,7 +43,7 @@ $(document).ready(function () {
             /** modal area: player name */
             e.stopPropagation();
 
-            Game.resources.validate.username(this.value)
+            Game.resources.validate.username((<HTMLInputElement>this).value)
                 ? bytes |= FLAG_USERNAME
                 : bytes &= ~FLAG_USERNAME;
 
@@ -54,12 +54,14 @@ $(document).ready(function () {
             e.stopPropagation();
 
             let pattern = Game.resources.config.pattern;
+            let value = <any>(<HTMLInputElement>this).value;
 
-            if (!isNaN(this.value) && this.value > pattern.battlefield.max) {
-                this.value = pattern.battlefield.max;
+            if (!isNaN(value) && value > pattern.battlefield.max) {
+                value = pattern.battlefield.max;
+                (<HTMLInputElement>this).value = <any>value;
             }
 
-            Game.resources.validate.battlefield.size(this.value)
+            Game.resources.validate.battlefield.size(<number>value)
                 ? bytes |= FLAG_BATTLEFIELD_SIZE
                 : bytes &= ~FLAG_BATTLEFIELD_SIZE;
 
