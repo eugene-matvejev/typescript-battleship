@@ -13,47 +13,45 @@
     }
 }
 
-$FLAG_UNDEFINED_FLAG: undefined;
+@FLAG_UNDEFINED_FLAG: undefined;
 
-$FLAG_NONE_COLOR: #e1ffff;
-$FLAG_NONE_FLAG: 0;
+@FLAG_NONE_COLOR: #e1ffff;
+@FLAG_NONE_FLAG: 0;
 
-$FLAG_DEAD_COLOR: #1e5799;
-$FLAG_DEAD_FLAG: 1;
+@FLAG_DEAD_COLOR: #1e5799;
+@FLAG_DEAD_FLAG: 1;
 
-$FLAG_SHIP_COLOR: #000;
-$FLAG_SHIP_FLAG: 2;
+@FLAG_SHIP_COLOR: #000;
+@FLAG_SHIP_FLAG: 2;
 
-$FLAG_SHIP_DEAD_COLOR: #6d0019;
-$FLAG_SHIP_DEAD_FLAG: 3;
+@FLAG_SHIP_DEAD_COLOR: #6d0019;
+@FLAG_SHIP_DEAD_FLAG: 3;
 
-$FLAG_SKIP_COLOR: #556980;
-$FLAG_SKIP_FLAG: 5;
+@FLAG_SKIP_COLOR: #556980;
+@FLAG_SKIP_FLAG: 5;
 
 .history-element,
 .battlefield-cell {
-    &[data-flags="#{$FLAG_NONE_FLAG}"] {
-        background: $FLAG_NONE_COLOR;
+    &[data-flags="@{FLAG_NONE_FLAG}"] {
+        background: @FLAG_NONE_COLOR;
     }
-    &[data-flags="#{$FLAG_DEAD_FLAG}"] {
-        background: $FLAG_DEAD_COLOR;
+    &[data-flags="@{FLAG_DEAD_FLAG}"] {
+        background: @FLAG_DEAD_COLOR;
     }
-    &[data-flags="#{$FLAG_SHIP_FLAG}"] {
-        background: $FLAG_SHIP_COLOR;
+    &[data-flags="@{FLAG_SHIP_FLAG}"] {
+        background: @FLAG_SHIP_COLOR;
     }
-    &[data-flags="#{$FLAG_SHIP_DEAD_FLAG}"] {
-        background: $FLAG_SHIP_DEAD_COLOR;
+    &[data-flags="@{FLAG_SHIP_DEAD_FLAG}"] {
+        background: @FLAG_SHIP_DEAD_COLOR;
     }
-    &[data-flags="#{$FLAG_SKIP_FLAG}"] {
-        background: $FLAG_SKIP_COLOR;
+    &[data-flags="@{FLAG_SKIP_FLAG}"] {
+        background: @FLAG_SKIP_COLOR;
     }
 }
 
-.battlefield-cell
-{
-    &.flag_skip
-    {
-        background: $FLAG_SKIP_COLOR;
+.battlefield-cell {
+    &.flag_skip {
+        background: @FLAG_SKIP_COLOR;
     }
 }
 
@@ -66,7 +64,7 @@ $FLAG_SKIP_FLAG: 5;
     line-height: 32px;
     text-align: center;
 
-    &[data-flags="#{$FLAG_NONE_FLAG}"]:hover {
+    &[data-flags="@{FLAG_NONE_FLAG}"]:hover {
         background: rgba(225, 255, 255, 0.75);
         cursor: pointer;
     }
@@ -80,16 +78,16 @@ $FLAG_SKIP_FLAG: 5;
         font-size: 32px;
     }
 
-    .battlefield-cell:not([data-flags="#{$FLAG_UNDEFINED_FLAG}"]):hover {
+    .battlefield-cell:not([data-flags="@{FLAG_UNDEFINED_FLAG}"]):hover {
         cursor: no-drop;
     }
 
-    &[data-player-flag="1"] .battlefield-cell:not([data-flags="#{$FLAG_DEAD_FLAG}"]):not([data-flags="#{$FLAG_SHIP_DEAD_FLAG}"]):hover {
+    &[data-player-flag="1"] .battlefield-cell:not([data-flags="@{FLAG_DEAD_FLAG}"]):not([data-flags="@{FLAG_SHIP_DEAD_FLAG}"]):hover {
         cursor: pointer;
     }
 }
 
-.player-field div[data-flags="#{$FLAG_UNDEFINED_FLAG}"] {
+.player-field div[data-flags="@{FLAG_UNDEFINED_FLAG}"] {
     opacity: 0.75;
 }
 
