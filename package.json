@@ -15,8 +15,8 @@
     "generate:all": "npm run generate:css && npm run generate:js",
     "generate:js": "tsc",
     "generate:js:w": "tsc -w",
-    "generate:css": "node node_modules/lessc-each src/less web/assets/stylesheets --verbose",
-    "generate:css:w": "node node_modules/less-watch-compiler src/less web/assets/stylesheets --verbose"
+    "generate:css": "node node_modules/lessc-each src/less web/assets/css --verbose",
+    "generate:css:w": "node node_modules/less-watch-compiler src/less web/assets/css --verbose"
   },
   "author": "eugene.matvejev@gmail.com",
   "dependencies": {

@@ -7,3 +7,5 @@ var/logs
 !var/logs/.gitkeep
 typings
 !web/assets/vendor
+!web/assets/js/.gitkeep
+!web/assets/css/.gitkeep
