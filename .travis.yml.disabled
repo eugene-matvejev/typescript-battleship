@@ -2,6 +2,7 @@ language: node_js
 
 node_js:
     - "node"
+# uncomment to enable to testing against major supported JS versions    
 #    - "iojs"
 #    - "7"
 #    - "6"
