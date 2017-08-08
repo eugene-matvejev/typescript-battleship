@@ -4,5 +4,5 @@ var/logs
 !var/logs/.gitkeep
 web/assets
 !web/assets/vendor
-!web/assets/js/.gitkeep
 !web/assets/css/.gitkeep
+!web/assets/js/.gitkeep
