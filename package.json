@@ -1,35 +1,32 @@
 {
-  "name": "battleship-game-gui",
-  "version": "1.1.0",
-  "description": "GUI for battleship-game-api",
-  "repository": {
-    "main": "https://github.com/eugene-matvejev/battleship-game-gui"
-  },
-  "main": "index.js",
-  "license": "MIT",
-  "scripts": {
-    "start": "npm run generate:all && concurrently \"npm run generate:js:w\" \"npm run start:server\" ",
-    "start:server": "lite-server",
-    "preinstall": "npm i less lite-server@\">=2.2.0 <2.3.0\" -g",
-    "postinstall": "npm run generate:all",
-    "prepublish": "npm run generate:all",
-    "generate:all": "npm run generate:css && npm run generate:js",
-    "generate:js": "tsc",
-    "generate:js:w": "tsc -w",
-    "generate:css": "node node_modules/lessc-each src/less web/assets/css --verbose",
-    "generate:css:w": "node node_modules/less-watch-compiler src/less web/assets/css --verbose"
-  },
-  "author": "eugene.matvejev@gmail.com",
-  "dependencies": {
-    "@types/jquery": "^3.2.11",
-    "bootstrap": "^3.3",
-    "concurrently": "^2.0.0",
-    "jquery": "^3.1",
-    "lessc-each": "^1.1.0",
-    "lite-server": "^2.3.0",
-    "typescript": "^1.8.10"
-  },
-  "devDependencies": {
-    "less-watch-compiler": "^1.6.7"
-  }
+    "name": "battleship-game-gui",
+    "version": "1.1.0",
+    "description": "GUI for battleship-game-api",
+    "repository": {
+        "main": "https://github.com/eugene-matvejev/battleship-game-gui"
+    },
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "start": "npm run generate:all && concurrently \"npm run generate:js:w\" \"npm run start:server\" ",
+        "start:server": "lite-server",
+        "preinstall": "npm i less lite-server@\">=2.2.0 <2.3.0\" -g",
+        "postinstall": "npm run generate:all",
+        "prepublish": "npm run generate:all",
+        "generate:all": "npm run generate:css && npm run generate:js",
+        "generate:js": "tsc",
+        "generate:js:w": "tsc -w",
+        "generate:css": "node node_modules/lessc-each src/less web/assets/css --verbose",
+        "generate:css:w": "node node_modules/less-watch-compiler src/less web/assets/css --verbose"
+    },
+    "author": "eugene.matvejev@gmail.com",
+    "dependencies": {
+        "@types/jquery": "^3.2.11",
+        "concurrently": "^2.0.0",
+        "lessc-each": "^1.1.0",
+        "typescript": "^2.0.0"
+    },
+    "devDependencies": {
+        "less-watch-compiler": "^1.6.7"
+    }
 }
