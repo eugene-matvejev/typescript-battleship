@@ -1,18 +1,35 @@
-# Battleship Game GUI
+
+[circle.ci-master-badge]: https://circleci.com/gh/eugene-matvejev/battleship-game-gui-vanilla-typescript/tree/master.svg?style=svg
+[circle.ci-master-link]: https://circleci.com/gh/eugene-matvejev/battleship-game-gui-vanilla-typescript/tree/master
+[codecov.io-master-badge]: https://codecov.io/gh/eugene-matvejev/battleship-game-gui-vanilla-typescript/branch/master/graph/badge.svg
+[codecov.io-master-link]: https://codecov.io/gh/eugene-matvejev/battleship-game-gui-vanilla-typescript/branch/master
+
+[circle.ci-heroku-badge]: https://circleci.com/gh/eugene-matvejev/battleship-game-gui-vanilla-typescript/tree/heroku.svg?style=svg
+[circle.ci-heroku-link]: https://circleci.com/gh/eugene-matvejev/battleship-game-gui-vanilla-typescript/tree/heroku
+[codecov.io-heroku-badge]: https://codecov.io/gh/eugene-matvejev/battleship-game-gui-vanilla-typescript/branch/heroku/graph/badge.svg
+[codecov.io-heroku-link]: https://codecov.io/gh/eugene-matvejev/battleship-game-gui-vanilla-typescript/branch/heroku
+
+
+|                        | master                                                         | heroku                                                    
+|---                     |---                                                             |---
+| __TDD tests__          |
+| _< Circle CI >_ TSC    | [![build][circle.ci-master-badge]][circle.ci-master-link]      | [![build][circle.ci-heroku-badge]][circle.ci-heroku-link]
+| _< Circle CI >_ LESSC  | [![build][circle.ci-master-badge]][circle.ci-master-link]      | [![build][circle.ci-heroku-badge]][circle.ci-heroku-link]
+| __coverage__           |
+| _< codecov.io >_       | [![coverage][codecov.io-master-badge]][codecov.io-master-link] | [![coverage][codecov.io-heroku-badge]][codecov.io-heroku-link]
+
+other CI engines reports _[on master]_
+
+[![code-climate-code-quality](https://codeclimate.com/github/eugene-matvejev/battleship-game-api/badges/gpa.svg)](https://codeclimate.com/github/eugene-matvejev/battleship-game-api)
+[![travis-build-status-master](https://travis-ci.org/eugene-matvejev/battleship-game-gui-vanilla-typescript.svg?branch=master)](https://travis-ci.org/eugene-matvejev/battleship-game-gui-vanilla-typescript)
+[![codeship-build-status-master](https://app.codeship.com/projects/ed12aa00-33e7-0134-0af7-7e8c04437b1f/status?branch=master)](https://app.codeship.com/projects/164872)
+
+# Battleship Game GUI on vanilla TypeScript
+
 GUI for https://github.com/eugene-matvejev/battleship-game-api
 
-__TDD tests__
-* WIP
+__DEMO__ : https://battleship-game-gui-vanila-typescipt.herokuapp.com/ [GUI]
 
-__BDD tests__
- * WIP
-
-__Test Coverage__
- * WIP
-
-__DEMO__ : https://battleship-game-gui.herokuapp.com/ [GUI]
-
-# Battleship Game GUI
 ##### THIS IS SPARE TIME PROJECT, WORK IN PROGRESS! HIGHLY EXPERIMENTAL!!!
 #### project purpose:
  * try out "cutting edge" technologies and approaches such as TypeScript, ES6 and Continuous Integration|Deployment
@@ -26,17 +43,21 @@ _purpose: easier manual testing_
   * if you will hit __B2__ cell - you will win
 
 # software requirements
-* TypeScript Compiler [TSC]
-* Compass
+ * TypeScript Compiler [TSC]
+ * LESS Compiler
+ * node.js v6.9+
+ * npm v3.8+ or yarn v0.21
 
 # technology stack
 ### key technologies:
- * TypeScript
+ * TypeScript 2.0
  * JavaScript ES6 [ECMAScript6]
- * SASS [SCSS]
+ * LESS
  * CSS3
  * Twitter Bootstrap 3
  * jQuery 2
+ * yarn
+ * npm
 
 ### used patterns:
  * MVC
@@ -57,9 +78,12 @@ _purpose: easier manual testing_
    * pull requests follows [semantic vesion](http://semver.org/)
 
 # how to install
- * npm install
- * typings install
- * tsc
+ * `$ npm install` or if you have __yarn__ installed locally - `$ yarn install` will fetch dependencies and install dependencies globaly:
+   * node.js less compiler
+   * node.js lite server
+
+# static mode
+ * `$ npm run generate:all` - will generate
 
 ### how to execute tests
  * WIP
