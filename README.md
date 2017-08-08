@@ -23,7 +23,7 @@ __DEMO__ : https://battleship-game-gui.herokuapp.com/ [GUI]
 #### game cheat-code:
 _purpose: easier manual testing_
 * AI player have only one ship, which is one-cell ship which and located at __B2__ cell
- * if you will hit __B2__ cell - you will win
+  * if you will hit __B2__ cell - you will win
 
 # software requirements
 * TypeScript Compiler [TSC]
@@ -33,10 +33,10 @@ _purpose: easier manual testing_
 ### key technologies:
  * TypeScript
  * JavaScript ES6 [ECMAScript6]
- * CSS3
  * SASS [SCSS]
- * jQuery 2
+ * CSS3
  * Twitter Bootstrap 3
+ * jQuery 2
 
 ### used patterns:
  * MVC
@@ -51,10 +51,10 @@ _purpose: easier manual testing_
  * result of each pull request is ready-to-use release, using Continuous Delivery principles
  * pull requests are named using semantic visioning
  * __gitflow__:
-  * master branch: stable, contains release-ready source
-  * heroku branch: reflects current deployed app at heroku (prototype of Continuous Delivery|Deployment)
-  * prototype_* branches contains new idea [merged pull request of prototype branch is always next *major* version release]
-  * pull requests follows [semantic vesion](http://semver.org/)
+   * master branch: stable, contains release-ready source
+   * heroku branch: reflects current deployed app at heroku (prototype of Continuous Delivery|Deployment)
+   * prototype_* branches contains new idea [merged pull request of prototype branch is always next *major* version release]
+   * pull requests follows [semantic vesion](http://semver.org/)
 
 # how to install
  * npm install
@@ -78,12 +78,12 @@ _purpose: easier manual testing_
 
     ServerName gui.game.local
     ServerAlias gui.game.local
+
     <Directory "%PROJECT_ROOT_DIRECTORY%/web">
         AllowOverride All
         Order Allow,Deny
         Allow from All
 
-        # AllowOverride none
         Require all granted
     </Directory>
 </VirtualHost>
