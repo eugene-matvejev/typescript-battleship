@@ -1,8 +1,8 @@
 node_modules
 
-var/logs
-!var/logs/.gitkeep
 web/assets
 !web/assets/vendor
 !web/assets/css/.gitkeep
 !web/assets/js/.gitkeep
+var/logs
+!var/logs/.gitkeep
