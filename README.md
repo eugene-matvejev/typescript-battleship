@@ -1,4 +1,4 @@
-# Battleship Game GUI
+# Battleship Game GUI on vanilla TypeScript
 GUI for https://github.com/eugene-matvejev/battleship-game-api
 
 __TDD tests__
@@ -31,12 +31,14 @@ _purpose: easier manual testing_
 
 # technology stack
 ### key technologies:
- * TypeScript
+ * TypeScript 2.0
  * JavaScript ES6 [ECMAScript6]
- * SASS [SCSS]
+ * LESS
  * CSS3
  * Twitter Bootstrap 3
  * jQuery 2
+ * yarn
+ * npm
 
 ### used patterns:
  * MVC
@@ -57,9 +59,12 @@ _purpose: easier manual testing_
    * pull requests follows [semantic vesion](http://semver.org/)
 
 # how to install
- * npm install
- * typings install
- * tsc
+ * `$ npm install` or if you have __yarn__ installed locally - `$ yarn install` will fetch dependencies and install dependencies globaly:
+   * node.js less compiler
+   * node.js lite server
+
+# static mode
+ * `$ npm run generate:all` - will generate
 
 ### how to execute tests
  * WIP
