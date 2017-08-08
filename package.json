@@ -8,26 +8,28 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
-        "lite": "lite-server",
-        "postinstall": "typings install",
-        "tsc": "tsc",
-        "tsc:w": "tsc -w",
-        "typings": "typings",
-        "watch-css": "nodemon -e scss -x \"npm run build-css\"",
-        "build-css": "node-sass --include-path scss src/scss/app.scss web/assets/css/app.css"
+        "start": "npm run generate:all && concurrently \"npm run generate:js:w\" \"npm run start:server\" ",
+        "start:server": "lite-server",
+        "preinstall": "npm i less lite-server@\">=2.2.0 <2.3.0\" -g",
+        "postinstall": "npm run generate:all",
+        "prepublish": "npm run generate:all",
+        "generate:all": "npm run generate:css && npm run generate:js",
+        "generate:js": "tsc",
+        "generate:js:w": "tsc -w",
+        "generate:css": "node node_modules/lessc-each src/less web/assets/css --verbose",
+        "generate:css:w": "node node_modules/less-watch-compiler src/less web/assets/css --verbose"
     },
     "author": "eugene.matvejev@gmail.com",
     "dependencies": {
+        "@types/jquery": "^3.2.11",
+        "bootstrap": "^3.3",
+        "concurrently": "^2.0.0",
         "jquery": "^3.1",
-        "bootstrap": "^3.3"
+        "lessc-each": "^1.1.0",
+        "lite-server": "^2.3.0",
+        "typescript": "^2.0.0"
     },
     "devDependencies": {
-        "concurrently": "^2.0.0",
-        "lite-server": "^2.2.0",
-        "node-sass": "^3.8.0",
-        "nodemon": "^1.9.2",
-        "typescript": "^1.8.10",
-        "typings": "^1.0.4"
+        "less-watch-compiler": "^1.6.7"
     }
 }
