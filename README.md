@@ -7,15 +7,14 @@ __TDD tests__
 __BDD tests__
  * WIP
 
-__Test Coverage__
+__test coverage__
  * WIP
 
-__DEMO__ : https://battleship-game-gui.herokuapp.com/ [GUI]
+__DEMO__ : https://battleship-game-gui-vanila-typescipt.herokuapp.com/ [GUI]
 
-# Battleship Game GUI
+# Battleship Game GUI: Vanilla TypeScript
 ##### THIS IS SPARE TIME PROJECT, WORK IN PROGRESS! HIGHLY EXPERIMENTAL!!!
 #### project purpose:
- * try out "cutting edge" technologies and approaches such as TypeScript, ES6 and Continuous Integration|Deployment
  * try out single-page-application [SPA] aproach
  * try out cross-browser requests
  * deliver preview about my technical knowledge before the job interview
@@ -27,14 +26,15 @@ _purpose: easier manual testing_
 
 # software requirements
 * TypeScript Compiler [TSC]
-* Compass
+* node.js v6.9+
+* npm v3.8+
 
 # technology stack
 ### key technologies:
  * TypeScript
  * JavaScript ES6 [ECMAScript6]
  * CSS3
- * SASS [SCSS]
+ * LESS
  * jQuery 2
  * Twitter Bootstrap 3
 

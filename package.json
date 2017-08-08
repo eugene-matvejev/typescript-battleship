@@ -10,13 +10,13 @@
   "scripts": {
     "start": "npm run generate:all && concurrently \"npm run generate:js:w\" \"npm run start:server\" ",
     "start:server": "lite-server",
-    "preinstall": "npm i typings lite-server@\">=2.2.0 <2.3.0\" -g",
+    "preinstall": "npm i less typings@^2.1.0 lite-server@\">=2.2.0 <2.3.0\" -g",
     "postinstall": "typings install",
     "generate:all": "npm run generate:css && npm run generate:js",
     "generate:js": "tsc",
     "generate:js:w": "tsc -w",
-    "generate:css": "node node_modules/lessc-each src/less src/stylesheets --verbose",
-    "generate:css:w": "node node_modules/less-watch-compile -w src/less -o src/stylesheets --verbose"
+    "generate:css": "node node_modules/lessc-each src/less web/assets/stylesheets --verbose",
+    "generate:css:w": "node node_modules/less-watch-compiler src/less web/assets/stylesheets --verbose"
   },
   "author": "eugene.matvejev@gmail.com",
   "dependencies": {
@@ -26,9 +26,9 @@
     "lessc-each": "^1.1.0",
     "lite-server": "^2.3.0",
     "typescript": "^1.8.10",
-    "typings": "^1.5.0"
+    "typings": "^2.1.0"
   },
   "devDependencies": {
-    "less-watch-compile": "^1.1.8"
+    "less-watch-compiler": "^1.1"
   }
 }
