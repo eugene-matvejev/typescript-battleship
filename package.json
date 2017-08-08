@@ -29,6 +29,6 @@
     "typings": "^2.1.0"
   },
   "devDependencies": {
-    "less-watch-compiler": "^1.1"
+    "less-watch-compiler": "^1.6.7"
   }
 }
