@@ -1,11 +1,8 @@
-.sass-cache
-
 node_modules
 
-web/assets
 var/logs
 !var/logs/.gitkeep
-typings
+web/assets
 !web/assets/vendor
 !web/assets/js/.gitkeep
 !web/assets/css/.gitkeep
