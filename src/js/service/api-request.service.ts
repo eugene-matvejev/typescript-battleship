@@ -16,7 +16,7 @@ class APIRequestService extends Configuration {
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onload = onSuccess;
         xhr.send(requestData);
-
+        /** jQuery */
         // $.ajax(<any>{
         //     accepts: 'application/json',
         //     dataType: 'json',
