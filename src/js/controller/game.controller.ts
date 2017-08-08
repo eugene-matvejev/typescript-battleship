@@ -77,7 +77,7 @@ $(document).ready(function () {
             game.apiMgr.pageMgr.switchSection(<HTMLElement>document.querySelector('.page-sidebar li[data-section="game-current-area"]'));
             game.init(
                 document.getElementById('model-input-player-name').getAttribute('value'),
-                parseInt(document.getElementById('model-input-battlefield-size').getAttribute('value'))
+                parseInt(document.getElementById('model-input-battlefield-size').getAttribute('value'), 10)
             );
         });
 });
