@@ -20,7 +20,7 @@
 
 other CI engines reports _[on master]_
 
-[![code-climate-code-quality](https://codeclimate.com/github/eugene-matvejev/battleship-game-api/badges/gpa.svg)](https://codeclimate.com/github/eugene-matvejev/battleship-game-api)
+[![code-climate-code-quality](https://codeclimate.com/github/eugene-matvejev/battleship-game-gui-vanilla-typescript/badges/gpa.svg)](https://codeclimate.com/github/eugene-matvejev/battleship-game-gui-vanilla-typescript)
 [![travis-build-status-master](https://travis-ci.org/eugene-matvejev/battleship-game-gui-vanilla-typescript.svg?branch=master)](https://travis-ci.org/eugene-matvejev/battleship-game-gui-vanilla-typescript)
 [![codeship-build-status-master](https://app.codeship.com/projects/ed12aa00-33e7-0134-0af7-7e8c04437b1f/status?branch=master)](https://app.codeship.com/projects/164872)
 
