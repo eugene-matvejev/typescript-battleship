@@ -19,7 +19,7 @@ class Game {
         this.$html.html('');
 
         let self      = this,
-            onSuccess = function (response) {
+            onSuccess = function (response: XMLHttpRequest) {
                 self.parseInitResponse(response);
             };
 
@@ -42,14 +42,26 @@ class Game {
         this.apiMgr.request('POST', this.$html.attr('data-init-link'), requestData, onSuccess);
     }
 
-    /**
-     * @param {{
-     *      id: {number},
-     *      player: {id: {number}, name: {string}},
-     *      cells: {id: {number}, coordinate: {string}, flags: {number}}[]
-     *  }[]} response
-     */
-    parseInitResponse(response: any): void {
+    parseInitResponse(xhr: XMLHttpRequest): void {
+        let response = JSON.parse(xhr.response);
+        /**
+         * @param {
+         *      {
+         *          id: {number},
+         *          player: {
+         *              id: {number},
+         *              name: {string}
+         *          },
+         *          cells: {
+         *              id: {number},
+         *              coordinate: {string},
+         *              flags: {number}
+         *          }[]
+         *      }[]
+         *  } response
+         *  
+         *  @param {Battlefield} battlefield
+         */
         response.forEach(function (battlefield) {
             let player;
 

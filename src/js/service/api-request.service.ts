@@ -11,10 +11,6 @@ class APIRequestService extends Configuration {
         requestData = JSON.stringify(requestData);
         requestURL = APIRequestService.buildRequestURL(requestURL);
 
-        var xhr = new XMLHttpRequest();
-        xhr.open(requestMethod, requestURL);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.onload = onSuccess;
         xhr.send(requestData);
 
         // $.ajax(<any>{
@@ -44,4 +40,3 @@ class APIRequestService extends Configuration {
         return `${APIRequestService.requestProtocol}://${APIRequestService.requestHost}/${requestPath}`
     }
 }
-
