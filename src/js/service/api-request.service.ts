@@ -11,10 +11,29 @@ class APIRequestService extends Configuration {
         requestData = JSON.stringify(requestData);
         requestURL = APIRequestService.buildRequestURL(requestURL);
 
-        var xhr = new XMLHttpRequest();
-        xhr.open(requestMethod, requestURL);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.onload = onSuccess;
+
+        this.pageMgr.loadingMode(true);
+        console.log(` >>> ${requestMethod} :: ${requestURL}`, requestData || '');
+
+        let xhr = new XMLHttpRequest();
+        xhr.open(requestMethod, requestURL, true);
+        xhr.timeout = APIRequestService.requestTimeout;
+
+        xhr.onload = function () {
+            if(undefined !== onSuccess) {
+                onSuccess(xhr);
+            }
+
+            self.pageMgr.loadingMode(false);
+        };
+        xhr.onerror = function () {
+            if(undefined !== onError) {
+                onError(xhr);
+            }
+
+            self.pageMgr.loadingMode(false);
+        };
+
         xhr.send(requestData);
 
         // $.ajax(<any>{
@@ -44,4 +63,3 @@ class APIRequestService extends Configuration {
         return `${APIRequestService.requestProtocol}://${APIRequestService.requestHost}/${requestPath}`
     }
 }
-
