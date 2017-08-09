@@ -17,11 +17,6 @@
 | __coverage__          |
 | _< codecov.io >_      | [![coverage][codecov.io-master-badge]][codecov.io-master-link] | [![coverage][codecov.io-heroku-badge]][codecov.io-heroku-link]
 
-other CI engines reports _[on master]_
-
-[![travis-build-status-master](https://travis-ci.org/eugene-matvejev/battleship-game-gui-vanilla-typescript.svg?branch=master)](https://travis-ci.org/eugene-matvejev/battleship-game-gui-vanilla-typescript)
-[![codeship-build-status-master](https://app.codeship.com/projects/ed12aa00-33e7-0134-0af7-7e8c04437b1f/status?branch=master)](https://app.codeship.com/projects/164872)
-
 # Battleship Game GUI on vanilla TypeScript
 for https://github.com/eugene-matvejev/battleship-game-api
 
