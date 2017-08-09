@@ -11,25 +11,50 @@ class APIRequestService extends Configuration {
         requestData = JSON.stringify(requestData);
         requestURL = APIRequestService.buildRequestURL(requestURL);
 
-        $.ajax(<any>{
-            accepts: 'application/json',
-            dataType: 'json',
-            crossDomain: true,
-            method: requestMethod,
-            url: requestURL,
-            data: requestData,
-            timeout: APIRequestService.requestTimeout,
-            beforeSend: function () {
-                self.pageMgr.loadingMode(true);
-                console.log(` >>> ${requestMethod} :: ${requestURL}`, requestData || '');
-            },
-            complete: function (jqXHR) {
-                self.pageMgr.loadingMode(false);
-                console.log(` >>> ${requestMethod} :: ${requestURL}`, jqXHR);
-            },
-            success: onSuccess,
-            error: onError
-        });
+
+        this.pageMgr.loadingMode(true);
+        console.log(` >>> ${requestMethod} :: ${requestURL}`, requestData || '');
+
+        let xhr = new XMLHttpRequest();
+        xhr.open(requestMethod, requestURL, true);
+        xhr.timeout = APIRequestService.requestTimeout;
+
+        xhr.onload = function () {
+            if(undefined !== onSuccess) {
+                onSuccess(xhr);
+            }
+
+            self.pageMgr.loadingMode(false);
+        };
+        xhr.onerror = function () {
+            if(undefined !== onError) {
+                onError(xhr);
+            }
+
+            self.pageMgr.loadingMode(false);
+        };
+
+        xhr.send(requestData);
+
+        // $.ajax(<any>{
+        //     accepts: 'application/json',
+        //     dataType: 'json',
+        //     crossDomain: true,
+        //     method: requestMethod,
+        //     url: requestURL,
+        //     data: requestData,
+        //     timeout: APIRequestService.requestTimeout,
+        //     beforeSend: function () {
+        //         self.pageMgr.loadingMode(true);
+        //         console.log(` >>> ${requestMethod} :: ${requestURL}`, requestData || '');
+        //     },
+        //     complete: function (jqXHR) {
+        //         self.pageMgr.loadingMode(false);
+        //         console.log(` >>> ${requestMethod} :: ${requestURL}`, jqXHR);
+        //     },
+        //     success: onSuccess,
+        //     error: onError
+        // });
     }
 
     protected static buildRequestURL(requestPath: string) {
@@ -38,4 +63,3 @@ class APIRequestService extends Configuration {
         return `${APIRequestService.requestProtocol}://${APIRequestService.requestHost}/${requestPath}`
     }
 }
-
