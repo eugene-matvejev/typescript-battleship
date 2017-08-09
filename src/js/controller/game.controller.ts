@@ -1,6 +1,9 @@
 /**
  * this controller serve all "Game" related actions such as game initiation
  */
+
+const game = new Game($('div#game-current-area'));
+
 $(document).ready(function () {
     const FLAG_NONE             = 0x00;
     const FLAG_USERNAME         = 0x01;
@@ -8,7 +11,6 @@ $(document).ready(function () {
     const FLAG_ALL              = FLAG_USERNAME | FLAG_BATTLEFIELD_SIZE;
 
     let bytes                 = FLAG_NONE,
-        game                  = new Game($('div#game-current-area')),
         highlightInputSection = function (el, flag) {
             el.classList.remove('has-success');
             el.classList.remove('has-error');
