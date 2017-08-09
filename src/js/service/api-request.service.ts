@@ -63,4 +63,3 @@ class APIRequestService extends Configuration {
         return `${APIRequestService.requestProtocol}://${APIRequestService.requestHost}/${requestPath}`
     }
 }
-
