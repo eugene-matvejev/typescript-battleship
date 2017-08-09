@@ -19,7 +19,7 @@ class Game {
         this.$html.html('');
 
         let self      = this,
-            onSuccess = function (response) {
+            onSuccess = function (response: XMLHttpRequest) {
                 self.parseInitResponse(response);
             };
 
