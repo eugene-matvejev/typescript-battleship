@@ -5,7 +5,7 @@
  */
 module.exports = {
     port: process.env.PORT || 9999,
-    files: ['./**/*.{html,htm,css,js}'],
+    files: ['./**/*.{html,htm,css,js,eot,svg,ttf,woff,woff2}'],
     server: {
         baseDir: "./web"
     }

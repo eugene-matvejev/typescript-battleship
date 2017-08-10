@@ -16,14 +16,13 @@
         "generate:all": "npm run generate:css && npm run generate:js",
         "generate:js": "tsc",
         "generate:js:w": "tsc -w",
-        "generate:css": "node node_modules/lessc-each src/less web/assets/css --verbose",
+        "generate:css": "lessc src/less/app.less web/assets/css/app.css --verbose",
         "generate:css:w": "node node_modules/less-watch-compiler src/less web/assets/css --verbose"
     },
     "author": "eugene.matvejev@gmail.com",
     "dependencies": {
         "@types/jquery": "^3.2.11",
         "concurrently": "^2.0.0",
-        "lessc-each": "^1.1.0",
         "typescript": "^2.0.0"
     },
     "devDependencies": {
