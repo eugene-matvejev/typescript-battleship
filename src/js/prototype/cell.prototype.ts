@@ -37,7 +37,8 @@ class Cell {
     }
 
     actAsAxisLabel(mode: string): Cell {
-        this.$html.text(Cell.resources.coordinate.format[mode](this));
+        const formatter = Cell.resources.coordinate.format[mode];
+        this.$html.text(formatter(this));
 
         return this;
     }
