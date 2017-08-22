@@ -6,7 +6,7 @@ class ModalMgr {
     }
 
     show(): ModalMgr {
-        this.$html.removeClass('hidden').find('.modal').modal({keyboard: false});
+        this.$html.removeClass('hidden').find('.modal').modal({ keyboard: false });
 
         return this;
     }

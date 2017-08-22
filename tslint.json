@@ -31,23 +31,6 @@
             "check-separator",
             "check-type"
         ],
-        "typedef-whitespace": [
-            true,
-            {
-                "call-signature": "onespace",
-                "index-signature": "onespace",
-                "parameter": "onespace",
-                "property-declaration": "onespace",
-                "variable-declaration": "onespace"
-            },
-            {
-                "call-signature": "onespace",
-                "index-signature": "onespace",
-                "parameter": "onespace",
-                "property-declaration": "onespace",
-                "variable-declaration": "onespace"
-            }
-        ],
         "variable-name": [
             "allow-leading-underscore"
         ],
