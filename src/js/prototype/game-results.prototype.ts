@@ -15,10 +15,10 @@ class GameResults {
     }
 
     fetch(page: number|string): void {
-        let self      = this,
-            onSuccess = function (response) {
-                self.update(response);
-            };
+        const self = this;
+        const onSuccess = (response) => {
+            self.update(response);
+        };
 
         this.apiMgr.request('GET', this.route + page, undefined, onSuccess);
     }
@@ -27,9 +27,9 @@ class GameResults {
      * @param {{meta: {currentPage: {number}, totalPages: {number}}, results: []}} response
      */
     update(response: any): void {
-        let html   = GameResults.resources.html,
-            $table = $(html.table()),
-            $tBody = $table.find('tbody');
+        const html = GameResults.resources.html;
+        const $table = $(html.table());
+        const $tBody = $table.find('tbody');
 
         response.results.forEach(result => $tBody.append(html.row(result)));
 

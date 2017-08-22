@@ -10,14 +10,14 @@ $(document).ready(function () {
     const FLAG_BATTLEFIELD_SIZE = 0x02;
     const FLAG_ALL              = FLAG_USERNAME | FLAG_BATTLEFIELD_SIZE;
 
-    let bytes                 = FLAG_NONE,
-        highlightInputSection = function (el, flag) {
-            el.classList.remove('has-success');
-            el.classList.remove('has-error');
-            el.classList.add((bytes & flag) === flag ? 'has-success' : 'has-error');
+    let bytes = FLAG_NONE;
+    const highlightInputSection = (el, flag) : void => {
+        el.classList.remove('has-success');
+        el.classList.remove('has-error');
+        el.classList.add((bytes & flag) === flag ? 'has-success' : 'has-error');
 
-            game.modalMgr.unlockSubmission((bytes & FLAG_ALL) === FLAG_ALL);
-        };
+        game.modalMgr.unlockSubmission((bytes & FLAG_ALL) === FLAG_ALL);
+    };
 
     // /** open modal for new game when page is loaded */
     // game.modalMgr.updateHTML(game.constructor.resources.html.modal).show();
@@ -55,7 +55,7 @@ $(document).ready(function () {
             /** modal area: battlefield size */
             e.stopPropagation();
 
-            let pattern = Game.resources.config.pattern;
+            const pattern = Game.resources.config.pattern;
             let value = <any>(<HTMLInputElement>this).value;
 
             if (!isNaN(value) && value > pattern.battlefield.max) {
@@ -74,9 +74,10 @@ $(document).ready(function () {
             e.stopPropagation();
 
             game.apiMgr.pageMgr.switchSection(<HTMLElement>document.querySelector('.page-sidebar li[data-section="game-current-area"]'));
-            game.init(
-                document.getElementById('model-input-player-name').getAttribute('value'),
-                parseInt(document.getElementById('model-input-battlefield-size').getAttribute('value'), 10)
-            );
+
+            const playerName = document.getElementById('model-input-player-name').getAttribute('value');
+            const gameSize = parseInt(document.getElementById('model-input-battlefield-size').getAttribute('value'), 10);
+
+            game.init(playerName, gameSize);
         });
 });

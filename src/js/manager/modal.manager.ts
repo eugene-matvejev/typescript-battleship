@@ -26,7 +26,7 @@ class ModalMgr {
     }
 
     unlockSubmission(enable?: boolean): ModalMgr {
-        let $button = this.$html.find('button.btn[type="button"]');
+        const $button = this.$html.find('button.btn[type="button"]');
 
         $button[0].disabled = !(undefined === enable || enable);
 

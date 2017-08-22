@@ -41,7 +41,7 @@ class Player {
     }
 
     isAIControlled(): boolean {
-        let flag = Player.resources.flags.ai;
+        const flag = Player.resources.flags.ai;
 
         return (this.flags & flag) === flag;
     }

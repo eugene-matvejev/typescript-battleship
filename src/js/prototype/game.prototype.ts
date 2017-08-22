@@ -18,10 +18,10 @@ class Game {
         this.players = [];
         this.$html.html('');
 
-        let self      = this,
-            onSuccess = function (response: XMLHttpRequest) {
-                self.parseInitResponse(response);
-            };
+        const self = this;
+        const onSuccess = (response : XMLHttpRequest) : void => {
+            self.parseInitResponse(response);
+        };
 
         /** construct player */
         let player = new Player(playerName, battlefieldSize);
@@ -30,7 +30,7 @@ class Game {
         /** save human player **/
         this.players.push(player);
 
-        let requestData = {
+        const requestData = {
             playerName: playerName,
             opponents: 1, //TODO: multi-player feature
             size: battlefieldSize,
@@ -43,7 +43,7 @@ class Game {
     }
 
     parseInitResponse(xhr: XMLHttpRequest): void {
-        let response = JSON.parse(xhr.response);
+        const response = JSON.parse(xhr.response);
         /**
          * @param {
          *      {
@@ -68,8 +68,8 @@ class Game {
             try {
                 player = this.findPlayerByName(battlefield.player.name);
             } catch (ex) {
-                let size = Math.sqrt(Object.keys(battlefield.cells).length);
-                player   = new Player(battlefield.player.name, size, true);
+                const size = Math.sqrt(Object.keys(battlefield.cells).length);
+                player = new Player(battlefield.player.name, size, true);
 
                 this.$html.prepend(player.$html);
                 this.players.push(player);
@@ -91,7 +91,7 @@ class Game {
     }
 
     findPlayerById(id: number): Player {
-        let player = this.players.find(player => player.id === id);
+        const player = this.players.find(player => player.id === id);
         if (undefined !== player) {
             return player;
         }
@@ -100,7 +100,7 @@ class Game {
     }
 
     findPlayerByName(name: string): Player {
-        let player = this.players.find(player => player.name === name);
+        const player = this.players.find(player => player.name === name);
         if (undefined !== player) {
             return player;
         }
@@ -108,11 +108,11 @@ class Game {
         throw `player with name: "${name}" not found`;
     }
 
-    cellSend(cell: Cell): void {
-        var self      = this,
-            onSuccess = function (response) {
-                self.parseUpdateResponse(response);
-            };
+    cellSend(cell : Cell) : void {
+        const self = this;
+        const onSuccess = (response) : void => {
+            self.parseUpdateResponse(response);
+        };
 
         this.apiMgr.request('PATCH', this.$html.attr('data-turn-link') + cell.id, undefined, onSuccess);
     }
@@ -125,7 +125,7 @@ class Game {
 
         /** detect victory */
         if (undefined !== response.result) {
-            let text = Game.resources.config.text;
+            const text = Game.resources.config.text;
 
             this.findPlayerById(response.result.player.id).isAIControlled()
                 ? this.popupMgr.show(text.loss, 'danger')
@@ -137,13 +137,13 @@ class Game {
      * @param {{playerId: {number}, id: {number}, coordinate: {string}}} criteria
      */
     findPlayerCellByCriteria(criteria: any): Cell {
-        for (let player of this.players) {
+        for (const player of this.players) {
             try {
                 if (undefined !== criteria.playerId && criteria.playerId !== player.id) {
                     continue;
                 }
 
-                let cell = player.battlefield.findCellByCriteria(criteria);
+                const cell = player.battlefield.findCellByCriteria(criteria);
                 if (undefined !== cell) {
                     return cell;
                 }
@@ -183,7 +183,7 @@ class Game {
         },
         html: {
             modal: function (): string {
-                let pattern = Game.resources.config.pattern;
+                const pattern = Game.resources.config.pattern;
 
                 return ` \
                 <div class="modal fade"> \

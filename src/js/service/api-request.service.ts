@@ -7,7 +7,7 @@ class APIRequestService extends Configuration {
     }
 
     request(requestMethod: string, requestURL: string, requestData?: Object, onSuccess?: Function, onError?: Function) {
-        let self = this;
+        const self = this;
         requestData = JSON.stringify(requestData);
         requestURL = APIRequestService.buildRequestURL(requestURL);
 
@@ -15,7 +15,7 @@ class APIRequestService extends Configuration {
         this.pageMgr.loadingMode(true);
         console.log(` >>> ${requestMethod} :: ${requestURL}`, requestData || '');
 
-        let xhr = new XMLHttpRequest();
+        const xhr = new XMLHttpRequest();
         xhr.open(requestMethod, requestURL, true);
         xhr.timeout = APIRequestService.requestTimeout;
 

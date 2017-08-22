@@ -10,10 +10,10 @@ class Battlefield {
     }
 
     init(size: number): Battlefield {
-        let layout     = Cell.resources.layout,
-            $container = $(Battlefield.resources.cellRowLayout),
-            /** append < first , first > transparent cell to top decoration row */
-            $top       = $container.clone().append(layout);
+        const layout = Cell.resources.layout;
+        const $container = $(Battlefield.resources.cellRowLayout);
+        /** append < first , first > transparent cell to top decoration row */
+        const $top = $container.clone().append(layout);
 
         this.$html.append($top);
 
@@ -53,7 +53,7 @@ class Battlefield {
      * @param {{id: {number}, coordinate: {string}}} criteria
      */
     findCellByCriteria(criteria: any): Cell {
-        let cell = this.cells.find(cell =>
+        const cell = this.cells.find(cell =>
             (undefined !== criteria.id && cell.id === criteria.id) ||
             (undefined !== criteria.coordinate && cell.coordinate === criteria.coordinate)
         );
