@@ -11,7 +11,7 @@ class Game {
 
         this.popupMgr = new PopupMgr();
         this.modalMgr = new ModalMgr();
-        this.apiMgr   = new APIRequestService();
+        this.apiMgr = new APIRequestService();
     }
 
     init(playerName: string, battlefieldSize: number) {
@@ -19,7 +19,7 @@ class Game {
         this.$html.html('');
 
         const self = this;
-        const onSuccess = (response : XMLHttpRequest) : void => {
+        const onSuccess = (response: XMLHttpRequest): void => {
             self.parseInitResponse(response);
         };
 
@@ -87,7 +87,7 @@ class Game {
     }
 
     update(cellId: number): void {
-        this.cellSend(this.findPlayerCellByCriteria({id: cellId}));
+        this.cellSend(this.findPlayerCellByCriteria({ id: cellId }));
     }
 
     findPlayerById(id: number): Player {
@@ -108,9 +108,9 @@ class Game {
         throw `player with name: "${name}" not found`;
     }
 
-    cellSend(cell : Cell) : void {
+    cellSend(cell: Cell): void {
         const self = this;
-        const onSuccess = (response) : void => {
+        const onSuccess = (response): void => {
             self.parseUpdateResponse(response);
         };
 

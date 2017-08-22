@@ -7,16 +7,16 @@ class GameResults {
 
     constructor($el: JQuery) {
         this.pagination = new PaginationMgr();
-        this.apiMgr     = new APIRequestService();
-        this.route      = $el.attr('data-game-results-link');
+        this.apiMgr = new APIRequestService();
+        this.route = $el.attr('data-game-results-link');
 
         this.$tableArea = $(GameResults.resources.layout);
         $el.append(this.$tableArea, this.pagination.$html);
     }
 
-    fetch(page: number|string): void {
+    fetch(page: number | string): void {
         const self = this;
-        const onSuccess = (response) => {
+        const onSuccess = (response): void => {
             self.update(response);
         };
 
