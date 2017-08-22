@@ -68,8 +68,8 @@ class Game {
             try {
                 player = this.findPlayerByName(battlefield.player.name);
             } catch (ex) {
-                let size = Math.sqrt(Object.keys(battlefield.cells).length);
-                player   = new Player(battlefield.player.name, size, true);
+                const size = Math.sqrt(Object.keys(battlefield.cells).length);
+                player = new Player(battlefield.player.name, size, true);
 
                 this.$html.prepend(player.$html);
                 this.players.push(player);
@@ -91,7 +91,7 @@ class Game {
     }
 
     findPlayerById(id: number): Player {
-        let player = this.players.find(player => player.id === id);
+        const player = this.players.find(player => player.id === id);
         if (undefined !== player) {
             return player;
         }
@@ -100,7 +100,7 @@ class Game {
     }
 
     findPlayerByName(name: string): Player {
-        let player = this.players.find(player => player.name === name);
+        const player = this.players.find(player => player.name === name);
         if (undefined !== player) {
             return player;
         }
@@ -110,7 +110,7 @@ class Game {
 
     cellSend(cell : Cell) : void {
         const self = this;
-        const onSuccess = response => {
+        const onSuccess = (response) : void => {
             self.parseUpdateResponse(response);
         };
 
@@ -125,7 +125,7 @@ class Game {
 
         /** detect victory */
         if (undefined !== response.result) {
-            let text = Game.resources.config.text;
+            const text = Game.resources.config.text;
 
             this.findPlayerById(response.result.player.id).isAIControlled()
                 ? this.popupMgr.show(text.loss, 'danger')
@@ -183,7 +183,7 @@ class Game {
         },
         html: {
             modal: function (): string {
-                let pattern = Game.resources.config.pattern;
+                const pattern = Game.resources.config.pattern;
 
                 return ` \
                 <div class="modal fade"> \
