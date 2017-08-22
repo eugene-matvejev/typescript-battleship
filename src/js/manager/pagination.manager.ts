@@ -71,7 +71,7 @@ class PaginationMgr {
                     <button type="button" id="previous-page-btn" data-page="" class="btn btn-default"> \
                         <span id="data-page-previous" class="glyphicon glyphicon-chevron-left"></span> \
                     </button> \
-                    <button type="button" class="btn btn-default" disabled="disabled"> \
+                    <button type="button" class="btn btn-default" disabled> \
                         <span id="data-page-current"></span> \
                         <span> of </span> \
                         <span id="data-page-total"></span> \
