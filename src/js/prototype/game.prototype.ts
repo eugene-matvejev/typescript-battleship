@@ -62,7 +62,7 @@ class Game {
          *  
          *  @param {Battlefield} battlefield
          */
-        response.forEach(function (battlefield) {
+        response.forEach(battlefield => {
             let player;
 
             try {
@@ -77,13 +77,13 @@ class Game {
 
             player.setId(battlefield.player.id);
 
-            Object.keys(battlefield.cells).forEach(function (index) {
-                let _cell = battlefield.cells[index],
-                    cell  = this.findPlayerCellByCriteria({playerId: player.id, coordinate: _cell.coordinate});
+            Object.keys(battlefield.cells).forEach(index => {
+                const _cell = battlefield.cells[index];
+                const cell = this.findPlayerCellByCriteria({ playerId: player.id, coordinate: _cell.coordinate });
 
                 cell.setId(_cell.id).setFlags(_cell.flags);
-            }, this);
-        }, this);
+            });
+        });
     }
 
     update(cellId: number): void {
@@ -121,7 +121,7 @@ class Game {
      * @param {{cells: {id: {number}, flags: {number}}[], result: {player: {Object}}}} response
      */
     parseUpdateResponse(response: any) {
-        response.cells.forEach(cell => this.findPlayerCellByCriteria({id: parseInt(cell.id)}).setFlags(cell.flags), this);
+        response.cells.forEach(cell => this.findPlayerCellByCriteria({ id: parseInt(cell.id) }).setFlags(cell.flags));
 
         /** detect victory */
         if (undefined !== response.result) {
