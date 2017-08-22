@@ -11,7 +11,7 @@ $(document).ready(function () {
     const FLAG_ALL              = FLAG_USERNAME | FLAG_BATTLEFIELD_SIZE;
 
     let bytes = FLAG_NONE;
-    const highlightInputSection = (el, flag) => {
+    const highlightInputSection = (el, flag) : void => {
         el.classList.remove('has-success');
         el.classList.remove('has-error');
         el.classList.add((bytes & flag) === flag ? 'has-success' : 'has-error');
