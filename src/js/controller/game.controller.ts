@@ -4,7 +4,7 @@
 
 const game = new Game($('div#game-current-area'));
 
-$(document).ready(function () {
+$(() => {
     const FLAG_NONE             = 0x00;
     const FLAG_USERNAME         = 0x01;
     const FLAG_BATTLEFIELD_SIZE = 0x02;
