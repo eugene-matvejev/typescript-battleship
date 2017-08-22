@@ -45,29 +45,27 @@ class GameResults {
         },
         layout: '<div class="results-area"></div>',
         html: {
-            table: function (): string {
-                let text = GameResults.resources.tableHeader;
+            table: (): string => {
+                const text = GameResults.resources.tableHeader;
 
-                return ` \
-                    <table class="table"> \
-                        <tr> \
-                            <th>${text.resultId}</th> \
-                            <th>${text.playerName}</th> \
-                            <th>${text.finishTime}</th> \
-                        </tr> \
+                return `
+                    <table class="table">
+                        <tr>
+                            <th>${text.resultId}</th>
+                            <th>${text.playerName}</th>
+                            <th>${text.finishTime}</th>
+                        </tr>
                     </table>`;
             },
             /**
              * @param {{id: {number}, player: {id: {number}}, timestamp: {string}}} obj
              */
-            row: function (obj: any): string {
-                return ` \
-                    <tr> \
-                        <td>${obj.id}</td> \
-                        <td>${(new Date(obj.timestamp)).toLocaleString()}</td> \
-                        <td>${obj.player.name}</td> \
-                    </tr>`;
-            }
+            row: (obj: any): string => `
+                <tr>
+                    <td>${obj.id}</td>
+                    <td>${(new Date(obj.timestamp)).toLocaleString()}</td>
+                    <td>${obj.player.name}</td>
+                </tr>`
         }
     }
 }

@@ -48,18 +48,12 @@ class Cell {
             dead: 0x01,
             ship: 0x02
         },
-        layout: '<div class="col-md-1 battlefield-cell"></div>',
+        layout: `<div class="col-md-1 battlefield-cell"></div>`,
         coordinate: {
-            factory: function (x: number, y: number) : string {
-                return String.fromCharCode(97 + x).toUpperCase() + (1 + y);
-            },
+            factory: (x: number, y: number): string => String.fromCharCode(97 + x).toUpperCase() + (++y),
             format: {
-                letter: function (cell: Cell) : string {
-                    return cell.coordinate.charAt(0);
-                },
-                digit: function (cell: Cell) : string {
-                    return cell.coordinate.substring(1);
-                }
+                letter: (cell: Cell): string => cell.coordinate.charAt(0),
+                digit: (cell: Cell): string => cell.coordinate.substring(1)
             }
         }
     }
