@@ -18,10 +18,10 @@ class Game {
         this.players = [];
         this.$html.html('');
 
-        let self      = this,
-            onSuccess = function (response: XMLHttpRequest) {
-                self.parseInitResponse(response);
-            };
+        const self = this;
+        const onSuccess = (response : XMLHttpRequest) : void => {
+            self.parseInitResponse(response);
+        };
 
         /** construct player */
         let player = new Player(playerName, battlefieldSize);
@@ -30,7 +30,7 @@ class Game {
         /** save human player **/
         this.players.push(player);
 
-        let requestData = {
+        const requestData = {
             playerName: playerName,
             opponents: 1, //TODO: multi-player feature
             size: battlefieldSize,
@@ -43,7 +43,7 @@ class Game {
     }
 
     parseInitResponse(xhr: XMLHttpRequest): void {
-        let response = JSON.parse(xhr.response);
+        const response = JSON.parse(xhr.response);
         /**
          * @param {
          *      {
@@ -108,11 +108,11 @@ class Game {
         throw `player with name: "${name}" not found`;
     }
 
-    cellSend(cell: Cell): void {
-        var self      = this,
-            onSuccess = function (response) {
-                self.parseUpdateResponse(response);
-            };
+    cellSend(cell : Cell) : void {
+        const self = this;
+        const onSuccess = response => {
+            self.parseUpdateResponse(response);
+        };
 
         this.apiMgr.request('PATCH', this.$html.attr('data-turn-link') + cell.id, undefined, onSuccess);
     }
@@ -137,13 +137,13 @@ class Game {
      * @param {{playerId: {number}, id: {number}, coordinate: {string}}} criteria
      */
     findPlayerCellByCriteria(criteria: any): Cell {
-        for (let player of this.players) {
+        for (const player of this.players) {
             try {
                 if (undefined !== criteria.playerId && criteria.playerId !== player.id) {
                     continue;
                 }
 
-                let cell = player.battlefield.findCellByCriteria(criteria);
+                const cell = player.battlefield.findCellByCriteria(criteria);
                 if (undefined !== cell) {
                     return cell;
                 }
