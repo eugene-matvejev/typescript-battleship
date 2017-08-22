@@ -1,7 +1,7 @@
 /**
  * this controller server "Game Results" related actions such as pagination and records displaying
  */
-$(document).ready(function () {
+$(() => {
     const gameResults = new GameResults($('div#game-results-area'));
 
     $('.page-sidebar')

@@ -1,7 +1,7 @@
 /**
  * this controller serve common "Application" actions such as sidebar toggling
  */
-$(document).ready(function () {
+$(() => {
     const pageMgr = new PageMgr();
     const popupMgr = new PopupMgr();
 
