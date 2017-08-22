@@ -67,8 +67,7 @@ class Battlefield {
     /** *** *** *** *** *** *** *** DATA MOCK *** *** *** *** *** *** **/
     initPlayerCells(): void {
         ['A1', 'A2', 'A3', 'C3', 'C4', 'C5', 'C1', 'D1', 'E1', 'F1', 'G5', 'G6', 'F3'].forEach(
-            coordinate => this.findCellByCriteria({coordinate: coordinate}).setFlags(Cell.resources.flags.ship),
-            this
+            coordinate => this.findCellByCriteria({ coordinate: coordinate }).setFlags(Cell.resources.flags.ship)
         );
     }
 
