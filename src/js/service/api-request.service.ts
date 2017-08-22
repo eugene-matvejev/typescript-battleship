@@ -19,15 +19,15 @@ class APIRequestService extends Configuration {
         xhr.open(requestMethod, requestURL, true);
         xhr.timeout = APIRequestService.requestTimeout;
 
-        xhr.onload = function () {
-            if(undefined !== onSuccess) {
+        xhr.onload = (): void => {
+            if (undefined !== onSuccess) {
                 onSuccess(xhr);
             }
 
             self.pageMgr.loadingMode(false);
         };
-        xhr.onerror = function () {
-            if(undefined !== onError) {
+        xhr.onerror = (): void => {
+            if (undefined !== onError) {
                 onError(xhr);
             }
 
