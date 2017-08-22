@@ -50,10 +50,10 @@ class Player {
         flags: {
             ai: 0x01
         },
-        layout: ' \
-            <div class="col-md-6 player-area" data-player-id="unk" data-player-type="unk"> \
-                <div class="player-name">undefined</div> \
-                <div class="player-field"></div> \
-            </div>'
+        layout: `
+            <div class="col-md-6 player-area" data-player-id="unk" data-player-type="unk">
+                <div class="player-name">undefined</div>
+                <div class="player-field"></div>
+            </div>`
     }
 }

@@ -171,18 +171,16 @@ class Game {
         },
         validate: {
             battlefield: {
-                size: function (value: number): boolean {
-                    let battlefield = Game.resources.config.pattern.battlefield;
+                size: (value: number): boolean => {
+                    const battlefield = Game.resources.config.pattern.battlefield;
 
                     return !isNaN(value) && value >= battlefield.min && value <= battlefield.max;
                 }
             },
-            username: function (value: string): boolean {
-                return Game.resources.config.pattern.username.test(value);
-            }
+            username: (value: string): boolean => Game.resources.config.pattern.username.test(value)
         },
         html: {
-            modal: function (): string {
+            modal: (): string => {
                 const pattern = Game.resources.config.pattern;
 
                 return ` \
