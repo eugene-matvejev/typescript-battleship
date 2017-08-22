@@ -1,0 +1,43 @@
+{
+    "result": {
+        "id": 1,
+        "timestamp": "2017-08-21T13:20:47+0000",
+        "player": {
+            "id": 1,
+            "name": "Human",
+            "flags": 0
+        }
+    },
+    "cells": [
+        {
+            "id": 91,
+            "coordinate": "F7",
+            "flags": 1
+        },
+        {
+            "id": 9,
+            "coordinate": "B2",
+            "flags": 3
+        },
+        {
+            "id": 16,
+            "coordinate": "C2",
+            "flags": 5
+        },
+        {
+            "id": 10,
+            "coordinate": "B3",
+            "flags": 5
+        },
+        {
+            "id": 15,
+            "coordinate": "C1",
+            "flags": 5
+        },
+        {
+            "id": 17,
+            "coordinate": "C3",
+            "flags": 5
+        }
+    ]
+}
