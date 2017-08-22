@@ -2,8 +2,8 @@
  * this controller serve common "Application" actions such as sidebar toggling
  */
 $(document).ready(function () {
-    let pageMgr  = new PageMgr(),
-        popupMgr = new PopupMgr();
+    const pageMgr = new PageMgr();
+    const popupMgr = new PopupMgr();
 
     $('.page-sidebar, .page-content')
         .on('click', '.toggle-btn, .switch-btn', function (e) {
