@@ -210,7 +210,7 @@ class Game {
                                 </div> \
                             </div> \
                             <div class="modal-footer"> \
-                                <button type="button" id="model-button-init-new-game" class="btn btn-primary" disabled="disabled">next step</button> \
+                                <button type="button" id="model-button-init-new-game" class="btn btn-primary" disabled>next step</button> \
                             </div> \
                         </div> \
                     </div> \
