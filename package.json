@@ -10,7 +10,7 @@
     "scripts": {
         "start": "npm run generate:all && concurrently \"npm run generate:js:w\" \"npm run start:server\" ",
         "start:server": "lite-server",
-        "preinstall": "npm i less lite-server@\">=2.2.0 <2.3.0\" -g; cp src/js/configuration.ts.dist src/js/configuration.ts",
+        "preinstall": "npm i less lite-server@\">=2.2.0 <2.3.0\" -g; cp src/js/configuration.storage.ts.dist src/js/configuration.storage.ts",
         "postinstall": "npm run generate:all",
         "prepublish": "npm run generate:all",
         "generate:all": "npm run generate:css && npm run generate:js",
