@@ -72,9 +72,10 @@ _purpose: easier manual testing_
 
 # how to use
 ### how to install _[for development]_
- * `$ npm install` or if you have __yarn__ installed locally - `$ yarn install` will fetch local, and global dependencies:
+ * `$ npm install` or if you have __yarn__ installed locally - `$ yarn install` will fetch local, and global dependencies
    * node.js less compiler
    * node.js lite server
+ * `src/js/configuration.storage.ts` contains settings for the webapp
 
 ### static mode
  * `$ npm run generate:all` - will compile project css|configs|js from the sources
