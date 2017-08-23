@@ -1,6 +1,7 @@
 node_modules
 
 web/assets
+src/js/configuration.storage.ts
 !web/assets/vendor
 !web/assets/css/.gitkeep
 !web/assets/js/.gitkeep
