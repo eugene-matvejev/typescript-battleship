@@ -59,7 +59,7 @@ class Game {
          *          }[]
          *      }[]
          *  } response
-         *  
+         *
          *  @param {Battlefield} battlefield
          */
         response.forEach(battlefield => {
