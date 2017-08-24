@@ -23,7 +23,7 @@ $(() => {
     // game.modalMgr.updateHTML(game.constructor.resources.html.modal).show();
     /** initiate game when page is loaded */
     game.apiMgr.pageMgr.switchSection(<HTMLElement>document.querySelector('.page-sidebar li[data-section="game-current-area"]'));
-    game.init('Human', 7);
+    game.init('Player controlled by Human', 7);
 
     $('#game-current-area')
         .on('click', '.player-area[data-player-flag="1"] .battlefield-cell[data-flags="0"]', function (e) {

@@ -44,6 +44,9 @@
 
                     <a href="/api/documentation" class="ext-link history-title">api documentation</a>
                 </li>
+                <li class="data-provider-switch" id="data-provider-switch" data-data-provider-name="stub">
+                    data provider: <span id="data-provider-name"></span>
+                </li>
             </ul>
         </div>
         <div class="page-content">
@@ -65,13 +68,15 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="/service-worker-registry.js"></script>
+    <!--<script type="text/javascript" src="/service-worker-registry.js"></script>-->
 
     <script type="text/javascript" src="/assets/vendor/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="/assets/vendor/twitter-bootstrap/js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="/assets/js/configuration.storage.js"></script>
-    <script type="text/javascript" src="/assets/js/service/api-request.service.js"></script>
+    <script type="text/javascript" src="/assets/js/service/api.request.service.js"></script>
+    <script type="text/javascript" src="/assets/js/service/php.data.provider.js"></script>
+    <script type="text/javascript" src="/assets/js/service/stub.data.provider.js"></script>
 
     <script type="text/javascript" src="/assets/js/prototype/battlefield.prototype.js"></script>
     <script type="text/javascript" src="/assets/js/prototype/cell.prototype.js"></script>

@@ -43,7 +43,7 @@ class Game {
     }
 
     parseInitResponse(xhr: XMLHttpRequest): void {
-        const response = JSON.parse(xhr.response);
+        const response = xhr.response;
         /**
          * @param {
          *      {

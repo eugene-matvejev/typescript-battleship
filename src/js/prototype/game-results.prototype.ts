@@ -27,6 +27,7 @@ class GameResults {
      * @param {{meta: {currentPage: {number}, totalPages: {number}}, results: []}} response
      */
     update(response: any): void {
+        response = response.response;
         const html = GameResults.resources.html;
         const $table = $(html.table());
         const $tBody = $table.find('tbody');
@@ -52,8 +53,8 @@ class GameResults {
                     <table class="table">
                         <tr>
                             <th>${text.resultId}</th>
-                            <th>${text.playerName}</th>
                             <th>${text.finishTime}</th>
+                            <th>${text.playerName}</th>
                         </tr>
                     </table>`;
             },

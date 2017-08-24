@@ -7,18 +7,21 @@ const urlsToCache = [
 ];
 // caches.open(CACHE_NAME).
 
-    // localStorage
+// localStorage
 self.addEventListener('install', (event) => {
-    fetch('/json/game.init.request.1.opponent.json');
-        // if (xobj.readyState == 4 && xobj.status == "200") {
+    const promise = fetch('/json/game.init.request.1.opponent.json');
+    promise
+        .then(() => {console.log(arguments)})
+        .catch(e => {console.log(e)});
+    // if (xobj.readyState == 4 && xobj.status == "200") {
 
-            // .open will NOT return a value but simply returns undefined in async mode so use a callback
-            // callback(xobj.responseText);
-            const obj = JSON.parse(xobj.responseText);
-            console.log(obj);
-        // }
-    }
-    xobj.send(null);
+    // .open will NOT return a value but simply returns undefined in async mode so use a callback
+    // callback(xobj.responseText);
+    // const obj = JSON.parse(xobj.responseText);
+    console.log(promise);
+    // }
+    // }
+    // xobj.send(null);
 
     // Perform install steps
     // event.waitUntil(
@@ -31,11 +34,11 @@ self.addEventListener('install', (event) => {
     // );
 });
 
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', function (event) {
     event.respondWith(
         caches.match(event.request)
-            .then(function(response) {
-                console.log(response)
+            .then(function (response) {
+                    console.log(response)
                     // Cache hit - return response
                     if (response) {
                         return response;
