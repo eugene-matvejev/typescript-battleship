@@ -50,23 +50,23 @@ class GameResults {
                 const text = GameResults.resources.tableHeader;
 
                 return `
-                    <table class="table">
-                        <tr>
-                            <th>${text.resultId}</th>
-                            <th>${text.playerName}</th>
-                            <th>${text.finishTime}</th>
-                        </tr>
-                    </table>`;
+<table class="table">
+    <tr>
+        <th>${text.resultId}</th>
+        <th>${text.playerName}</th>
+        <th>${text.finishTime}</th>
+    </tr>
+</table>`;
             },
             /**
              * @param {{id: {number}, player: {id: {number}}, timestamp: {string}}} obj
              */
             row: (obj: any): string => `
-                <tr>
-                    <td>${obj.id}</td>
-                    <td>${obj.player.name}</td>
-                    <td>${(new Date(obj.timestamp)).toLocaleString()}</td>
-                </tr>`
+<tr>
+    <td>${obj.id}</td>
+    <td>${obj.player.name}</td>
+    <td>${(new Date(obj.timestamp)).toLocaleString()}</td>
+</tr>`
         }
     }
 }

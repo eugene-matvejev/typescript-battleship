@@ -69,7 +69,7 @@ $(() => {
 
             highlightInputSection(this.parentElement, FLAG_BATTLEFIELD_SIZE);
         })
-        .on('click', '#model-button-init-new-game', function (e) {
+        .on('click', '#button-init-new-game', function (e) {
             /** modal area: submit */
             e.stopPropagation();
 
