@@ -73,7 +73,7 @@ class Battlefield {
 
     public static resources = {
         /** @type {string} */
-        cellRowLayout: '<div class="row battlefield-cell-container"></div>'
+        cellRowLayout: `<div class="row battlefield-cell-container"></div>`
     }
 }
 
