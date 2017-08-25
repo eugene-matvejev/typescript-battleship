@@ -63,8 +63,8 @@ class GameResults {
             row: (obj: any): string => `
                 <tr>
                     <td>${obj.id}</td>
-                    <td>${(new Date(obj.timestamp)).toLocaleString()}</td>
                     <td>${obj.player.name}</td>
+                    <td>${(new Date(obj.timestamp)).toLocaleString()}</td>
                 </tr>`
         }
     }
