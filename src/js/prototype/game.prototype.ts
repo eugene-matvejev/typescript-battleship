@@ -184,35 +184,35 @@ class Game {
                 const pattern = Game.resources.config.pattern;
 
                 return `
-                <div class="modal fade">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                <h4 class="modal-title">your details</h4>
-                            </div>
-                            <div class="modal-body">
-                                <div class="form-group">
-                                    <label class="control-label" for="model-input-player-name">player name</label>
-                                    <input type="text" class="form-control" id="model-input-player-name" placeholder="">
-                                    <span class="help-block">pattern: "${pattern.username.toString()}"</span>
-                                    <span class="help-block">example: eugene.matvejev@gmail.com</span>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label" for="model-input-battlefield-size">battlefield size</label>
-                                    <input type="test" class="form-control" id="model-input-battlefield-size"
-                                            placeholder="battlefield size ${pattern.battlefield.min} and ${pattern.battlefield.max}"/>
-                                    <span class="help-block">example: 7</span>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" id="model-button-init-new-game" class="btn btn-primary" disabled>next step</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>`;
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">your details</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label class="control-label" for="model-input-player-name">player name</label>
+                    <input class="form-control" id="model-input-player-name" placeholder="">
+                    <span class="help-block">pattern: "${pattern.username.toString()}"</span>
+                    <span class="help-block">example: eugene.matvejev@gmail.com</span>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="model-input-battlefield-size">battlefield size</label>
+                    <input type="test" class="form-control" id="model-input-battlefield-size"
+                            placeholder="battlefield size ${pattern.battlefield.min} and ${pattern.battlefield.max}"/>
+                    <span class="help-block">example: 7</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="button-init-new-game" class="btn btn-primary" disabled>next step</button>
+            </div>
+        </div>
+    </div>
+</div>`;
             }
         }
     }
