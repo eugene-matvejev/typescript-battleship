@@ -65,21 +65,21 @@ class PaginationMgr {
 
     public static resources = {
         /** @type {string} */
-        layout: '\
-            <div class="pagination-area"> \
-                <div class="btn-group btn-group-xs" role="group" aria-label="statistics-pagination"> \
-                    <button type="button" id="previous-page-btn" data-page="" class="btn btn-default"> \
-                        <span id="data-page-previous" class="glyphicon glyphicon-chevron-left"></span> \
-                    </button> \
-                    <button type="button" class="btn btn-default" disabled> \
-                        <span id="data-page-current"></span> \
-                        <span> of </span> \
-                        <span id="data-page-total"></span> \
-                    </button> \
-                    <button type="button" id="next-page-btn" data-page="" class="btn btn-default"> \
-                        <span id="data-page-next" class="glyphicon glyphicon-chevron-right"></span> \
-                    </button> \
-                </div> \
-            </div>'
+        layout: `
+            <div class="pagination-area">
+                <div class="btn-group btn-group-xs" role="group" aria-label="statistics-pagination">
+                    <button type="button" id="previous-page-btn" data-page="" class="btn btn-default">
+                        <span id="data-page-previous" class="glyphicon glyphicon-chevron-left"></span>
+                    </button>
+                    <button type="button" class="btn btn-default" disabled>
+                        <span id="data-page-current"></span>
+                        <span> of </span>
+                        <span id="data-page-total"></span>
+                    </button>
+                    <button type="button" id="next-page-btn" data-page="" class="btn btn-default">
+                        <span id="data-page-next" class="glyphicon glyphicon-chevron-right"></span>
+                    </button>
+                </div>
+            </div>`
     }
 }
