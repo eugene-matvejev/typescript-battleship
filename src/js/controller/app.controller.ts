@@ -32,7 +32,6 @@ $(() => {
             this.setAttribute('data-data-provider-name', mode);
         });
 
-
     $('#notification-area')
         .on('click', '.notification-control', function (e) {
             e.stopPropagation();
