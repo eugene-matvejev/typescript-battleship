@@ -3,8 +3,8 @@
 
 
 "@types/jquery@^3.2.11":
-  version "3.2.11"
-  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.2.11.tgz#9119f91bb103b16ae8c4375b019a9b341b409f50"
+  version "3.2.12"
+  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.2.12.tgz#f496823108c3874c97c9a822e675a3926ee64b46"
 
 ajv@^4.9.1:
   version "4.11.8"
@@ -370,8 +370,8 @@ jsprim@^1.2.2:
     verror "1.10.0"
 
 less-watch-compiler@^1.6.7:
-  version "1.6.7"
-  resolved "https://registry.yarnpkg.com/less-watch-compiler/-/less-watch-compiler-1.6.7.tgz#406ddb84485909f5a55b5aabed7f29c6e5932fa6"
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/less-watch-compiler/-/less-watch-compiler-1.7.0.tgz#bf8c4b7f00c7fe56535c761c644fb62497ab143a"
   dependencies:
     amdefine ">= 0.1.0"
     commander "^2.9.0"
@@ -615,8 +615,8 @@ sntp@1.x.x:
     hoek "2.x.x"
 
 source-map@^0.5.3:
-  version "0.5.6"
-  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
 
 sshpk@^1.7.0:
   version "1.13.1"
@@ -669,8 +669,8 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
 
 typescript@^2.0.0:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.4.2.tgz#f8395f85d459276067c988aa41837a8f82870844"
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.5.1.tgz#ce7cc93ada3de19475cc9d17e3adea7aee1832aa"
 
 uuid@^3.0.0:
   version "3.1.0"
