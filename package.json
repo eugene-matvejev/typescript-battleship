@@ -8,7 +8,7 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "start": "npm run generate:all && concurrently \"npm run generate:js:w\" \"npm run start:server\" ",
+        "start": "npm run generate:all && concurrently \"npm run generate:css:w\" \"npm run generate:js:w\" \"npm run start:server\"",
         "start:server": "lite-server",
         "preinstall": "npm i less lite-server@\">=2.2.0 <2.3.0\" -g; cp src/js/configuration.storage.ts.dist src/js/configuration.storage.ts",
         "postinstall": "npm run generate:all",
