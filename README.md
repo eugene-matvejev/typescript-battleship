@@ -24,7 +24,7 @@ __DEMO__ : https://battleship-game-gui-typescript.herokuapp.com/ [GUI]
 
 ##### THIS IS SPARE TIME PROJECT, WORK IN PROGRESS! HIGHLY EXPERIMENTAL!!!
 #### project purpose:
- * try out "cutting edge" technologies and approaches such as TypeScript, ES6 and Continuous Integration|Deployment
+ * try out "cutting edge" technologies and approaches such as TypeScript, ES6, Service Workers and Continuous Integration|Deployment
  * try out single-page-application [SPA] aproach
  * try out cross-browser requests
  * deliver preview about my technical knowledge before the job interview
@@ -73,7 +73,7 @@ _purpose: easier manual testing_
 # how to use
 ### how to install _[for development]_
  * `$ npm install` or if you have __yarn__ installed locally - `$ yarn install` will fetch local, and global dependencies
-   * node.js less compiler
+   * node.js _LESS_ compiler [lessc]
    * node.js lite server
  * `src/js/configuration.storage.ts` contains settings for the webapp
 
@@ -85,8 +85,8 @@ _purpose: easier manual testing_
 
 ### /etc/hosts
 ```
-127.0.0.1        gui-vanilla-typescript.game.local
-::1              gui-vanilla-typescript.game.local
+127.0.0.1        game-gui-vanilla-typescript.game.local
+::1              game-gui-vanilla-typescript.game.local
 ```
 
 ### apache virtual host config
@@ -95,8 +95,8 @@ _purpose: easier manual testing_
     DocumentRoot "%PROJECT_ROOT_DIRECTORY%/web"
     ErrorLog "%PROJECT_ROOT_DIRECTORY%/var/logs/apache_log"
 
-    ServerName gui-vanilla-typescript.game.local
-    ServerAlias gui-vanilla-typescript.game.local
+    ServerName game-gui-vanilla-typescript.game.local
+    ServerAlias game-gui-vanilla-typescript.game.local
 
     <Directory "%PROJECT_ROOT_DIRECTORY%/web">
         AllowOverride All
