@@ -12,7 +12,7 @@ $(() => {
             gameResults.fetch(1);
         });
 
-    $('#data-provider-switch')
+    $('#game-results-area')
         .on('click', 'button[data-page]', function (e) {
             e.stopPropagation();
 
