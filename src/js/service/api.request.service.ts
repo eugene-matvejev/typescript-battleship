@@ -26,7 +26,6 @@ class APIRequestService extends Configuration {
         this.pageMgr.loadingMode(true);
 
         const dataProvider = this.getDataProvider();
-        // const dataProvider2 = new OfflineDataProvider();
 
         const self = this;
         dataProvider.request(
