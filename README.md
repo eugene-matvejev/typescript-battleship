@@ -49,7 +49,7 @@ _purpose: easier manual testing_
  * TypeScript 2.0+ Compiler [TSC]
  * LESS Compiler
  * node.js v6.9+
- * npm v3.8+ or yarn v0.21
+ * npm v3.8+ or yarn v0.21+
 
 ### key technologies
  * TypeScript 2.0
