@@ -1,5 +1,5 @@
 class PHPDataProvider extends Configuration implements DataProviderInterface {
-    request(method: string, url: string, data?: Object | string, onSuccess?: Function, onFail?: Function) {
+    request(method: string, url: string, data?: object | string, onSuccess?: Function, onFail?: Function) {
         data = JSON.stringify(data);
 
         const xhr = new XMLHttpRequest();

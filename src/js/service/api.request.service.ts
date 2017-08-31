@@ -19,7 +19,7 @@ class APIRequestService extends Configuration {
         return this.dataProviders[name];
     }
 
-    request(method: string, url: string, data?: Object, onSuccess?: Function, onError?: Function) {
+    request(method: string, url: string, data?: object | string, onSuccess?: Function, onError?: Function) {
         url = APIRequestService.buildRequestURL(url);
 
         console.log(` >>> ${method} :: ${url}`, data || '');
