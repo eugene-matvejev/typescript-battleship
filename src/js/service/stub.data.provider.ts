@@ -5,11 +5,11 @@ class StubDataProvider implements DataProviderInterface {
     ];
 
     constructor() {
-        StubDataProvider.aliasMap.forEach(el => this.fetchJSONMock(el.url, el.alias));
+        StubDataProvider.aliasMap.forEach((el) => this.fetchJSONMock(el.url, el.alias));
     }
 
     request(method: string, url: string, data?: object | string, onSuccess?: Function, onFail?: Function) {
-        const alias = StubDataProvider.aliasMap.find(el => url.indexOf(el.alias) !== -1);
+        const alias = StubDataProvider.aliasMap.find((el) => url.indexOf(el.alias) !== -1);
         if (undefined !== alias) {
             const cached = localStorage[alias.alias];
             const xdr = { response: JSON.parse(cached) };
@@ -20,10 +20,10 @@ class StubDataProvider implements DataProviderInterface {
 
     fetchJSONMock(url: string, alias: string): void {
         const xhr = new XMLHttpRequest();
-        xhr.overrideMimeType("application/json");
-        xhr.open("GET", url, true);
+        xhr.overrideMimeType('application/json');
+        xhr.open('GET', url, true);
         xhr.onreadystatechange = () => {
-            if (xhr.readyState === 4 && xhr.status == 200) {
+            if (xhr.readyState === 4 && xhr.status === 200) {
                 localStorage[alias] = xhr.responseText;
             }
         };

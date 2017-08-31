@@ -25,7 +25,7 @@ $(() => {
 
             let mode = 'stub';
             if (this.getAttribute('data-data-provider-name') === 'stub') {
-                mode = 'php'
+                mode = 'php';
             }
 
             document.getElementById('data-provider-name').innerText = mode;

@@ -6,9 +6,9 @@ class APIRequestService extends Configuration {
         super();
         this.pageMgr = new PageMgr();
         this.dataProviders = {
-            'php': new PHPDataProvider(),
-            'stub': new StubDataProvider()
-        }
+            php: new PHPDataProvider(),
+            stub: new StubDataProvider()
+        };
     }
 
     getDataProvider(name?: string): DataProviderInterface {
@@ -52,6 +52,6 @@ class APIRequestService extends Configuration {
     private static buildRequestURL(path: string): string {
         path = path.replace(/^\/|\/$/g, '');
 
-        return `${APIRequestService.requestProtocol}://${APIRequestService.requestHost}/${path}`
+        return `${APIRequestService.requestProtocol}://${APIRequestService.requestHost}/${path}`;
     }
 }
