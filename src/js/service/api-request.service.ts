@@ -35,26 +35,6 @@ class APIRequestService extends Configuration {
         };
 
         xhr.send(requestData);
-
-        // $.ajax(<any>{
-        //     accepts: 'application/json',
-        //     dataType: 'json',
-        //     crossDomain: true,
-        //     method: requestMethod,
-        //     url: requestURL,
-        //     data: requestData,
-        //     timeout: APIRequestService.requestTimeout,
-        //     beforeSend: function () {
-        //         self.pageMgr.loadingMode(true);
-        //         console.log(` >>> ${requestMethod} :: ${requestURL}`, requestData || '');
-        //     },
-        //     complete: function (jqXHR) {
-        //         self.pageMgr.loadingMode(false);
-        //         console.log(` >>> ${requestMethod} :: ${requestURL}`, jqXHR);
-        //     },
-        //     success: onSuccess,
-        //     error: onError
-        // });
     }
 
     protected static buildRequestURL(requestPath: string): string {
