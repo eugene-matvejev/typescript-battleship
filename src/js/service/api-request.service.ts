@@ -6,17 +6,17 @@ class APIRequestService extends Configuration {
         this.pageMgr = new PageMgr();
     }
 
-    request(requestMethod: string, requestURL: string, requestData?: object|string, onSuccess?: Function, onError?: Function) {
+    request(method: string, url: string, data?: object|string, onSuccess?: Function, onError?: Function) {
         const self = this;
-        requestData = JSON.stringify(requestData);
-        requestURL = APIRequestService.buildRequestURL(requestURL);
+        data = JSON.stringify(data);
+        url = APIRequestService.buildRequestURL(url);
 
 
         this.pageMgr.loadingMode(true);
-        console.log(` >>> ${requestMethod} :: ${requestURL}`, requestData || '');
+        console.log(` >>> ${method} :: ${url}`, data || '');
 
         const xhr = new XMLHttpRequest();
-        xhr.open(requestMethod, requestURL, true);
+        xhr.open(method, url, true);
         xhr.timeout = APIRequestService.requestTimeout;
 
         xhr.onload = (): void => {
@@ -34,7 +34,7 @@ class APIRequestService extends Configuration {
             self.pageMgr.loadingMode(false);
         };
 
-        xhr.send(requestData);
+        xhr.send(data);
     }
 
     protected static buildRequestURL(requestPath: string): string {
