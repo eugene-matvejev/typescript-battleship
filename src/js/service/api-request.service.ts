@@ -6,7 +6,7 @@ class APIRequestService extends Configuration {
         this.pageMgr = new PageMgr();
     }
 
-    request(requestMethod: string, requestURL: string, requestData?: Object, onSuccess?: Function, onError?: Function) {
+    request(requestMethod: string, requestURL: string, requestData?: object|string, onSuccess?: Function, onError?: Function) {
         const self = this;
         requestData = JSON.stringify(requestData);
         requestURL = APIRequestService.buildRequestURL(requestURL);
