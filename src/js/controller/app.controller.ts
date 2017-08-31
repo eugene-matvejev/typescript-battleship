@@ -5,7 +5,8 @@ $(() => {
     const pageMgr = new PageMgr();
     const popupMgr = new PopupMgr();
 
-    $('.data-provider-switch[data-data-provider-name] > span').text($('.data-provider-switch[data-data-provider-name]').attr('data-data-provider-name'));
+    const $dataProviderTag = $('[data-data-provider-name] > span');
+    $dataProviderTag.text($dataProviderTag.parent().attr('data-data-provider-name'));
 
     $('.page-sidebar, .page-content')
         .on('click', '.toggle-btn, .switch-btn', function (e) {
