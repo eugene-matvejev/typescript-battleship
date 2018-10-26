@@ -1,11 +1,14 @@
-machine:
-    node:
-        version: 6.9
-
-dependencies:
-    cache_directories:
-        - ~/.npm/
-
-test:
-    override:
-        - npm run generate:all
+version: 2
+jobs:
+  test:
+    docker:
+      - image: circleci/node:10.4.0
+    steps:
+      - checkout
+      - run: npm i --verbose
+      - run: npm run generate:all
+workflows:
+  version: 2
+  test-only:
+    jobs:
+      - test
