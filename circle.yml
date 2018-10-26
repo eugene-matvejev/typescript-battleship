@@ -6,6 +6,7 @@ jobs:
     steps:
       - checkout
       - run: npm i --verbose
+      - run: npm run generate:all
 workflows:
   version: 2
   test-only:
