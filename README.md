@@ -18,9 +18,7 @@
 | _< codecov.io >_      | [![coverage][codecov.io-master-badge]][codecov.io-master-link] | [![coverage][codecov.io-heroku-badge]][codecov.io-heroku-link]
 
 # Battleship Game GUI on vanilla TypeScript
-for https://github.com/eugene-matvejev/battleship-game-api
-
-__DEMO__ : https://battleship-game-gui-typescript.herokuapp.com/ [GUI]
+GUI for [Battleship Game API](https://github.com/eugene-matvejev/symfony-battleship), __[DEMO](https://battleship-game-gui-typescript.herokuapp.com/)__
 
 ##### THIS IS SPARE TIME PROJECT, WORK IN PROGRESS! HIGHLY EXPERIMENTAL!!!
 #### project purpose:
