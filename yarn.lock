@@ -126,7 +126,7 @@ concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
 
-concurrently@^2.0.0:
+concurrently@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/concurrently/-/concurrently-2.2.0.tgz#bad248e0bb129fb1621768903a6311d45d56895a"
   dependencies:
@@ -442,8 +442,8 @@ lodash.keys@^3.0.0:
     lodash.isarray "^3.0.0"
 
 lodash@^4.5.1:
-  version "4.17.4"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
 
 lru-cache@^2.5.0:
   version "2.7.3"
