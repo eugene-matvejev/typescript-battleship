@@ -1,0 +1,512 @@
+[
+    {
+        "id": 1,
+        "player": {
+            "id": 2,
+            "name": "Player controlled by CPU",
+            "flags": 1
+        },
+        "cells": [
+            {
+                "id": 1,
+                "coordinate": "A1",
+                "flags": 0
+            },
+            {
+                "id": 2,
+                "coordinate": "A2",
+                "flags": 0
+            },
+            {
+                "id": 3,
+                "coordinate": "A3",
+                "flags": 0
+            },
+            {
+                "id": 4,
+                "coordinate": "A4",
+                "flags": 0
+            },
+            {
+                "id": 5,
+                "coordinate": "A5",
+                "flags": 0
+            },
+            {
+                "id": 6,
+                "coordinate": "A6",
+                "flags": 0
+            },
+            {
+                "id": 7,
+                "coordinate": "A7",
+                "flags": 0
+            },
+            {
+                "id": 8,
+                "coordinate": "B1",
+                "flags": 0
+            },
+            {
+                "id": 9,
+                "coordinate": "B2",
+                "flags": 0
+            },
+            {
+                "id": 10,
+                "coordinate": "B3",
+                "flags": 0
+            },
+            {
+                "id": 11,
+                "coordinate": "B4",
+                "flags": 0
+            },
+            {
+                "id": 12,
+                "coordinate": "B5",
+                "flags": 0
+            },
+            {
+                "id": 13,
+                "coordinate": "B6",
+                "flags": 0
+            },
+            {
+                "id": 14,
+                "coordinate": "B7",
+                "flags": 0
+            },
+            {
+                "id": 15,
+                "coordinate": "C1",
+                "flags": 0
+            },
+            {
+                "id": 16,
+                "coordinate": "C2",
+                "flags": 0
+            },
+            {
+                "id": 17,
+                "coordinate": "C3",
+                "flags": 0
+            },
+            {
+                "id": 18,
+                "coordinate": "C4",
+                "flags": 0
+            },
+            {
+                "id": 19,
+                "coordinate": "C5",
+                "flags": 0
+            },
+            {
+                "id": 20,
+                "coordinate": "C6",
+                "flags": 0
+            },
+            {
+                "id": 21,
+                "coordinate": "C7",
+                "flags": 0
+            },
+            {
+                "id": 22,
+                "coordinate": "D1",
+                "flags": 0
+            },
+            {
+                "id": 23,
+                "coordinate": "D2",
+                "flags": 0
+            },
+            {
+                "id": 24,
+                "coordinate": "D3",
+                "flags": 0
+            },
+            {
+                "id": 25,
+                "coordinate": "D4",
+                "flags": 0
+            },
+            {
+                "id": 26,
+                "coordinate": "D5",
+                "flags": 0
+            },
+            {
+                "id": 27,
+                "coordinate": "D6",
+                "flags": 0
+            },
+            {
+                "id": 28,
+                "coordinate": "D7",
+                "flags": 0
+            },
+            {
+                "id": 29,
+                "coordinate": "E1",
+                "flags": 0
+            },
+            {
+                "id": 30,
+                "coordinate": "E2",
+                "flags": 0
+            },
+            {
+                "id": 31,
+                "coordinate": "E3",
+                "flags": 0
+            },
+            {
+                "id": 32,
+                "coordinate": "E4",
+                "flags": 0
+            },
+            {
+                "id": 33,
+                "coordinate": "E5",
+                "flags": 0
+            },
+            {
+                "id": 34,
+                "coordinate": "E6",
+                "flags": 0
+            },
+            {
+                "id": 35,
+                "coordinate": "E7",
+                "flags": 0
+            },
+            {
+                "id": 36,
+                "coordinate": "F1",
+                "flags": 0
+            },
+            {
+                "id": 37,
+                "coordinate": "F2",
+                "flags": 0
+            },
+            {
+                "id": 38,
+                "coordinate": "F3",
+                "flags": 0
+            },
+            {
+                "id": 39,
+                "coordinate": "F4",
+                "flags": 0
+            },
+            {
+                "id": 40,
+                "coordinate": "F5",
+                "flags": 0
+            },
+            {
+                "id": 41,
+                "coordinate": "F6",
+                "flags": 0
+            },
+            {
+                "id": 42,
+                "coordinate": "F7",
+                "flags": 0
+            },
+            {
+                "id": 43,
+                "coordinate": "G1",
+                "flags": 0
+            },
+            {
+                "id": 44,
+                "coordinate": "G2",
+                "flags": 0
+            },
+            {
+                "id": 45,
+                "coordinate": "G3",
+                "flags": 0
+            },
+            {
+                "id": 46,
+                "coordinate": "G4",
+                "flags": 0
+            },
+            {
+                "id": 47,
+                "coordinate": "G5",
+                "flags": 0
+            },
+            {
+                "id": 48,
+                "coordinate": "G6",
+                "flags": 0
+            },
+            {
+                "id": 49,
+                "coordinate": "G7",
+                "flags": 0
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "player": {
+            "id": 1,
+            "name": "Player controlled by Human",
+            "flags": 0
+        },
+        "cells": [
+            {
+                "id": 50,
+                "coordinate": "A1",
+                "flags": 3
+            },
+            {
+                "id": 51,
+                "coordinate": "A2",
+                "flags": 3
+            },
+            {
+                "id": 52,
+                "coordinate": "A3",
+                "flags": 2
+            },
+            {
+                "id": 53,
+                "coordinate": "A4",
+                "flags": 0
+            },
+            {
+                "id": 54,
+                "coordinate": "A5",
+                "flags": 0
+            },
+            {
+                "id": 55,
+                "coordinate": "A6",
+                "flags": 0
+            },
+            {
+                "id": 56,
+                "coordinate": "A7",
+                "flags": 0
+            },
+            {
+                "id": 57,
+                "coordinate": "B1",
+                "flags": 0
+            },
+            {
+                "id": 58,
+                "coordinate": "B2",
+                "flags": 0
+            },
+            {
+                "id": 59,
+                "coordinate": "B3",
+                "flags": 0
+            },
+            {
+                "id": 60,
+                "coordinate": "B4",
+                "flags": 0
+            },
+            {
+                "id": 61,
+                "coordinate": "B5",
+                "flags": 0
+            },
+            {
+                "id": 62,
+                "coordinate": "B6",
+                "flags": 0
+            },
+            {
+                "id": 63,
+                "coordinate": "B7",
+                "flags": 0
+            },
+            {
+                "id": 64,
+                "coordinate": "C1",
+                "flags": 2
+            },
+            {
+                "id": 65,
+                "coordinate": "C2",
+                "flags": 0
+            },
+            {
+                "id": 66,
+                "coordinate": "C3",
+                "flags": 2
+            },
+            {
+                "id": 67,
+                "coordinate": "C4",
+                "flags": 2
+            },
+            {
+                "id": 68,
+                "coordinate": "C5",
+                "flags": 2
+            },
+            {
+                "id": 69,
+                "coordinate": "C6",
+                "flags": 0
+            },
+            {
+                "id": 70,
+                "coordinate": "C7",
+                "flags": 0
+            },
+            {
+                "id": 71,
+                "coordinate": "D1",
+                "flags": 2
+            },
+            {
+                "id": 72,
+                "coordinate": "D2",
+                "flags": 0
+            },
+            {
+                "id": 73,
+                "coordinate": "D3",
+                "flags": 0
+            },
+            {
+                "id": 74,
+                "coordinate": "D4",
+                "flags": 0
+            },
+            {
+                "id": 75,
+                "coordinate": "D5",
+                "flags": 0
+            },
+            {
+                "id": 76,
+                "coordinate": "D6",
+                "flags": 0
+            },
+            {
+                "id": 77,
+                "coordinate": "D7",
+                "flags": 0
+            },
+            {
+                "id": 78,
+                "coordinate": "E1",
+                "flags": 2
+            },
+            {
+                "id": 79,
+                "coordinate": "E2",
+                "flags": 0
+            },
+            {
+                "id": 80,
+                "coordinate": "E3",
+                "flags": 0
+            },
+            {
+                "id": 81,
+                "coordinate": "E4",
+                "flags": 0
+            },
+            {
+                "id": 82,
+                "coordinate": "E5",
+                "flags": 0
+            },
+            {
+                "id": 83,
+                "coordinate": "E6",
+                "flags": 0
+            },
+            {
+                "id": 84,
+                "coordinate": "E7",
+                "flags": 0
+            },
+            {
+                "id": 85,
+                "coordinate": "F1",
+                "flags": 2
+            },
+            {
+                "id": 86,
+                "coordinate": "F2",
+                "flags": 0
+            },
+            {
+                "id": 87,
+                "coordinate": "F3",
+                "flags": 2
+            },
+            {
+                "id": 88,
+                "coordinate": "F4",
+                "flags": 0
+            },
+            {
+                "id": 89,
+                "coordinate": "F5",
+                "flags": 0
+            },
+            {
+                "id": 90,
+                "coordinate": "F6",
+                "flags": 0
+            },
+            {
+                "id": 91,
+                "coordinate": "F7",
+                "flags": 0
+            },
+            {
+                "id": 92,
+                "coordinate": "G1",
+                "flags": 0
+            },
+            {
+                "id": 93,
+                "coordinate": "G2",
+                "flags": 0
+            },
+            {
+                "id": 94,
+                "coordinate": "G3",
+                "flags": 0
+            },
+            {
+                "id": 95,
+                "coordinate": "G4",
+                "flags": 0
+            },
+            {
+                "id": 96,
+                "coordinate": "G5",
+                "flags": 2
+            },
+            {
+                "id": 97,
+                "coordinate": "G6",
+                "flags": 2
+            },
+            {
+                "id": 98,
+                "coordinate": "G7",
+                "flags": 0
+            }
+        ]
+    }
+]

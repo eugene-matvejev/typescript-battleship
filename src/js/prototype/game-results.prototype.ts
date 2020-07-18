@@ -27,6 +27,7 @@ class GameResults {
      * @param {{meta: {currentPage: {number}, totalPages: {number}}, results: []}} response
      */
     update(response: any): void {
+        response = response.response;
         const html = GameResults.resources.html;
         const $table = $(html.table());
         const $tBody = $table.find('tbody');

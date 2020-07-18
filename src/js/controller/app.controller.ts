@@ -5,6 +5,9 @@ $(() => {
     const pageMgr = new PageMgr();
     const popupMgr = new PopupMgr();
 
+    const $dataProviderTag = $('[data-data-provider-name] > span');
+    $dataProviderTag.text($dataProviderTag.parent().attr('data-data-provider-name'));
+
     $('.page-sidebar, .page-content')
         .on('click', '.toggle-btn, .switch-btn', function (e) {
             e.stopPropagation();
@@ -17,6 +20,17 @@ $(() => {
             e.stopPropagation();
 
             pageMgr.switchSection(this);
+        })
+        .on('click', '.data-provider-switch', function (e) {
+            e.stopPropagation();
+
+            let mode = 'stub';
+            if (this.getAttribute('data-data-provider-name') === 'stub') {
+                mode = 'php';
+            }
+
+            document.getElementById('data-provider-name').innerText = mode;
+            this.setAttribute('data-data-provider-name', mode);
         });
 
     $('#notification-area')
